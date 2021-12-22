@@ -15,13 +15,21 @@ class CreatePendaftaranTable extends Migration
     {
         Schema::create('pendaftaran', function (Blueprint $table) {
             $table->id();
-            $table->integer('lowongan_id');
-            $table->integer('user_id');
-            $table->integer('no_tes');
-            $table->string('nik');
+            $table->foreignId('lowongan_id');
+            $table->foreignId('user_id');
+            $table->integer('no_tes')->unique();
+            $table->string('nik')->unique();
             $table->string('ukuran_baju');
             $table->integer('ukuran_celana');
             $table->integer('ukuran_sepatu');
+            $table->string('jenis_vaksin_1');
+            $table->string('kota_vaksin_1');
+            $table->date('tgl_vaksin_1');
+            $table->string('img_bukti_1');
+            $table->string('jenis_vaksin_2');
+            $table->string('kota_vaksin_2');
+            $table->date('tgl_vaksin_2');
+            $table->string('img_bukti_2');
             $table->timestamps();
             $table->softDeletes();
         });

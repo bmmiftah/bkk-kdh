@@ -15,8 +15,8 @@ class CreateNotifikasiTable extends Migration
     {
         Schema::create('notifikasi', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('lowongan_id');
+            $table->foreignId('user_id');
+            $table->foreignId('lowongan_id');
             $table->text('isi_notif');
             $table->timestamps();
             $table->softDeletes();

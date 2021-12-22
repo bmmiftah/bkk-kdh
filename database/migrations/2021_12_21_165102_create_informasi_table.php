@@ -15,11 +15,14 @@ class CreateInformasiTable extends Migration
     {
         Schema::create('informasi', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('category_id');
+            $table->foreignId('user_id');
+            $table->foreignId('category_id');
             $table->string('title_informasi');
-            $table->string('image');
+            $table->string('slug')->uniqid();
+            $table->string('image')->nullable();
+            $table->string('excerpt');
             $table->text('isi_informasi');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

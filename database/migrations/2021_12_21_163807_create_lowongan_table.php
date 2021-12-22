@@ -15,10 +15,12 @@ class CreateLowonganTable extends Migration
     {
         Schema::create('lowongan', function (Blueprint $table) {
             $table->id();
-            $table->integer('perusahaan_id');
+            $table->foreignId('perusahaan_id');
             $table->string('title_lowongan');
+            $table->string('slug')->uniqid();
             $table->text('kriteria');
             $table->text('deskripsi');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
