@@ -6,14 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class Informasi extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
 
-    public function informasis()
+    public function Category()
     {
-        return $this->hasMany(Informasi::class);
+        return $this->belongsTo(Category::class);
+    }
+   
+    public function Perushaan()
+    {
+        return $this->belongsTo(Perusahaan::class);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLowonganTable extends Migration
+class CreateLowongansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateLowonganTable extends Migration
      */
     public function up()
     {
-        Schema::create('lowongan', function (Blueprint $table) {
+        Schema::create('lowongans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('perusahaan_id');
-            $table->string('title_lowongan');
-            $table->string('slug')->uniqid();
-            $table->text('kriteria');
-            $table->text('deskripsi');
-            $table->timestamp('published_at')->nullable();
+            $table->string('title_lowongan')->unique();
+            $table->string('slug')->unique();
+            $table->text('detail_lowongan');
+            $table->text('kriteria_lowongan');
+            $table->text('informasi_tambahan');
+            $table->date('tgl_buka');
+            $table->date('tgl_tutup');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +35,6 @@ class CreateLowonganTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lowongan');
+        Schema::dropIfExists('lowongans');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCaroselInformasiTable extends Migration
+class CreateProfilsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateCaroselInformasiTable extends Migration
      */
     public function up()
     {
-        Schema::create('carosel_informasi', function (Blueprint $table) {
+        Schema::create('profils', function (Blueprint $table) {
             $table->id();
-            $table->string('title_carosel');
-            $table->string('img_carosel');
+            $table->foreignId('user_id');
+            $table->text('alamat');
+            $table->string('sekolah');
+            $table->string('no_hp');
+            $table->string('avatar');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +32,6 @@ class CreateCaroselInformasiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carosel_informasi');
+        Schema::dropIfExists('profils');
     }
 }
