@@ -19,6 +19,9 @@ class CreatePendaftaranTable extends Migration
             $table->integer('user_id');
             $table->integer('no_tes');
             $table->string('nik');
+            $table->string('ukuran_baju');
+            $table->integer('ukuran_celana');
+            $table->integer('ukuran_sepatu');
             $table->timestamps();
             $table->softDeletes();
         });
