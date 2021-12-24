@@ -47,42 +47,27 @@
 
        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
   
+    @foreach ($lowongans as $lowongan )
+      
     <div class="list-lowongan py-3">
       <div class="card item-fluid">
         <div class="card-body">
-          <h5 class="card-title">PT. ASTRA HONDA MOTOR</h5>
-          <small> <b class="text-primary">TERSEDIA </b> <i class="bi bi-calendar3"></i> 12 maret 2021 - 25 maret 2020</small>
+          <h5 class="card-title">{{ $lowongan->title_lowongan }}</h5>
+          <small> 
+            @if ($lowongan->status === true )
+            <b class="text-primary">DIBUKA </b> <i class="bi bi-calendar3"></i> {{ $lowongan->tgl_tutup }}
+            @else
+            <b class="text-danger">DITUTUP </b> <i class="bi bi-calendar3"></i> {{ $lowongan->tgl_tutup }}
+            @endif
+          </small>
           <br> <hr>
           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iste alias et esse asperiores. Optio architecto corporis, temporibus quod nam labore a veniam sequi expedita magnam neque, ex deserunt accusantium.</p>
-          <a href="#" class="btn btn-primary">Lihat Lebih</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="list-lowongan py-3">
-      <div class="card item-fluid">
-        <div class="card-body">
-          <h5 class="card-title">PT. ASTRA HONDA MOTOR</h5>
-          <small> <b class="text-primary">TERSEDIA </b> <i class="bi bi-calendar3"></i> 12 maret 2021 - 25 maret 2020</small>
-          <br> <hr>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iste alias et esse asperiores. Optio architecto corporis, temporibus quod nam labore a veniam sequi expedita magnam neque, ex deserunt accusantium.</p>
-          <a href="#" class="btn btn-primary">Lihat Lebih</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="list-lowongan py-3">
-      <div class="card item-fluid">
-        <div class="card-body">
-          <h5 class="card-title">PT. ASTRA HONDA MOTOR</h5>
-          <small> <b class="text-danger">DITUTUP </b> <i class="bi bi-calendar3"></i> 12 maret 2021 - 25 maret 2020</small>
-          <br> <hr>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iste alias et esse asperiores. Optio architecto corporis, temporibus quod nam labore a veniam sequi expedita magnam neque, ex deserunt accusantium.</p>
-          <a href="#" class="btn btn-primary">Lihat Lebih</a>
+          <a href="/detail_lowongan/{{ $lowongan->slug }}" class="btn btn-primary">Lihat Lebih</a>
         </div>
       </div>
     </div>
     
+    @endforeach
     </div>
   </div>  
 </div>

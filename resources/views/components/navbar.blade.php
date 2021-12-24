@@ -9,16 +9,16 @@ style="font-family: Poppins, sans-serif">
   <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link px-md-4 {{ ($active === "home") ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
+        <a class="nav-link px-md-4 {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link px-md-4 {{ ($active === "about") ? 'active' : '' }}" href="/about">Tentang</a>
+        <a class="nav-link px-md-4 {{ Request::is('about') ? 'active' : '' }}" href="/about">Tentang</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link px-md-4 {{ ($active === "lowongan") ? 'active' : '' }}"  href="/lowongan">Lowongan</a>
+        <a class="nav-link px-md-4 {{ Request::is('lowongan') ? 'active' : '' }}"  href="/lowongan">Lowongan</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link px-md-4 {{ ($active === "informasi") ? 'active' : '' }} " href="/informasi">Informasi</a>
+        <a class="nav-link px-md-4 {{ Request::is('informasi') ? 'active' : '' }} " href="/informasi">Informasi</a>
       </li>
     </ul>
    
@@ -41,7 +41,7 @@ style="font-family: Poppins, sans-serif">
       </li>
       @else
       <li class="nav-item">
-        <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+        <a href="/login" class="nav-link {{ Request::is('login') ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
       </li>
       {{-- <div class="d-flex">
         <a class="btn btn-login btn-login py-2 px-4 {{ ($active === "about") ? 'login' : '' }}" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a>

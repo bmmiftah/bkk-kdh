@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LowonganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('/lowongan',[LowonganController::class, 'index']);
 
 Route::get('/', function () {
     return view('home', [
@@ -27,19 +30,15 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/lowongan', function () {
-    return view('lowongan', [
-        "title" => "Lowongan",
-        "active" => 'lowongan'
-    ]);
-});
+Route::get('/lowongan',[LowonganController::class, 'index']);
+Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show']);
 
-Route::get('/detail_lowongan', function () {
-    return view('detail_lowongan', [
-        "title" => "Detail Lowongan",
-        "active" => 'lowongan'
-    ]);
-});
+// Route::get('/detail_lowongan', function () {
+//     return view('detail_lowongan', [
+//         "title" => "Detail Lowongan",
+//         "active" => 'lowongan'
+//     ]);
+// });
 
 Route::get('/informasi', function () {
     return view('informasi', [

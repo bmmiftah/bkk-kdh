@@ -18,7 +18,7 @@
                   </h2>
                   <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                     <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      {{ $detail_lowongan->detail_lowongan }}
                     </div>
                   </div>
                 </div>
@@ -30,7 +30,7 @@
                   </h2>
                   <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                     <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      {{ $detail_lowongan->kriteria_lowongan }}
                     </div>
                   </div>
                 </div>
@@ -42,7 +42,7 @@
                   </h2>
                   <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                     <div class="accordion-body">
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                     {{ $detail_lowongan->informasi_tambahan }}
                     </div>
                   </div>
                 </div>
@@ -53,9 +53,13 @@
         <div class="col-md-5">
 
             <div class="item-fluid p-5 border rounded-3" style="background-color: #fefefe">
-                <h2>Add borders</h2>
-                <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-                <button class="btn btn-success" type="button"><i class="bi bi-briefcase-fill"></i> Daftar Lowongan</button>
+                <h2>{{ $detail_lowongan->title_lowongan }}</h2>
+                <p>{{ $detail_lowongan->perusahaan->nama_perusahaan }}</p>
+                <hr>
+                <h6>Status Pendaftaran <span class="badge bg-success">Dibuka</span></h6>
+                <p class="inline-text"><i class="bi bi-calendar2-date-fill"></i> Batas Pendaftaran : {{ $detail_lowongan->tgl_tutup }}</p>
+                <br>
+                <button class="btn btn-primary" type="button"><i class="bi bi-briefcase-fill"></i> Daftar Lowongan</button>
               </div>
 
         </div>
