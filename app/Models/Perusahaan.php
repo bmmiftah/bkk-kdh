@@ -12,13 +12,13 @@ class Perusahaan extends Model
 
     protected $guarded = ['id'];
 
-    public function lowongan()
+    public function lowongans()
     {
         return $this->hasMany(Lowongan::class);
     }
 
-    public function informasi()
+    public function informasis()
     {
-        return $this->hasMany('Informasi::class');
+        return $this->hasMany(Informasi::class);
     }
 }

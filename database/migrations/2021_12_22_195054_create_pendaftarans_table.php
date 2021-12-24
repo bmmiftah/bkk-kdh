@@ -27,7 +27,7 @@ class CreatePendaftaransTable extends Migration
             $table->string('kota_vaksin_1');
             $table->string('img_bukti_1');
             $table->string('jenis_vaksin_2');
-            $table->date('tgl_vaksin_1');
+            $table->date('tgl_vaksin_2');
             $table->string('kota_vaksin_2');
             $table->string('img_bukti_2');
             $table->timestamps();

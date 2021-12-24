@@ -15,16 +15,17 @@ class CreateLowongansTable extends Migration
     {
         Schema::create('lowongans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('perusahaan_id');
             $table->string('title_lowongan')->unique();
             $table->string('slug')->unique();
+            $table->foreignId('perusahaan_id');
             $table->text('detail_lowongan');
             $table->text('kriteria_lowongan');
             $table->text('informasi_tambahan');
             $table->date('tgl_buka');
             $table->date('tgl_tutup');
+            $table->boolean('status')->default(true);
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes()->nullable();
         });
     }
 
