@@ -6,7 +6,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="">
                     <div class="list-space">
-                        <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header2/Header-2-5.png"
+                        <img src="img/bkk-logo.png"
                             alt="" />
                     </div>
                     <nav class="list-unstyled">
@@ -50,7 +50,7 @@
 
                     <li class="list-space">
                         <h6>Kontak</h6>
-                        <small><i class="bi bi-phone"></i> +62234507239</small>
+                        <small><i class="bi bi-phone"></i> (0234) 507239</small>
                     </li>
 
                     <li class="list-space">

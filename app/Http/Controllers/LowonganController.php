@@ -16,7 +16,7 @@ class LowonganController extends Controller
     {
        return view('lowongan', [
 
-        "title" => "All Lowongan",
+        "title" => "Semua Lowongan",
         // "lowongans" => Lowongan::latest()->paginate(4)->withQueryString()
         "lowongans" => Lowongan::all()
        ]);

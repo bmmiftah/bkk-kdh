@@ -2,9 +2,9 @@
 
 @section('container')
 
-<div class="container justify-content-center py-3">
+<div class="container justify-content-center">
     <div class="info-header">
-        <h2 class=" mb-3 text-center">Pusat Informasi</h2>
+        <h2 class=" mb-3 text-center py-3">Pusat Informasi</h2>
 
         <div id="carouselExampleCaptions" class="carousel slide shadow-sm" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -85,38 +85,38 @@
         
       </div>
     
- 
-  <div class="row mb-5 col-md-8 item-fluid">
+
+  <div class="container mb-5 col-md-8 ">
+
+    <div class="row">
+
+@foreach ($informasis as $informasi )
   
-      <div class="col-5">
-        <div class="card mt-3">
-          <img src="/img/informasi.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-5">
-        <div class="card mt-3">
-          <img src="/img/informasi.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-
-
+<div class=" col-lg-6 px-0 card item-fluid mt-lg-3">
+  <img src="/img/informasi.jpg" class="card-img-top " alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ $informasi->title_informasi }}</h5>
+    <small class="card-text text-muted">{{ $informasi->Category->title_category }}</small>
+    <p class="card-text">{{ $informasi->excerpt }}</p>
   </div>
-      
-      
-    </div>  
-  </div>
+</div>
 
+@endforeach
+      
     </div>
+  </div>
+  
+    
+      
 
+ </div>
+  
+
+
+  
+
+</div>
 </div>
 
 @endsection

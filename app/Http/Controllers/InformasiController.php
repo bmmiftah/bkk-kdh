@@ -14,7 +14,10 @@ class InformasiController extends Controller
      */
     public function index()
     {
-        //
+        return view('informasi',[
+            "title" => "Pusat Informasi",
+            "informasis" => Informasi::all()
+        ]);
     }
 
     /**

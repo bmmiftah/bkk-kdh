@@ -6,7 +6,7 @@
 
   <h2 class="text-center py-3">Lowongan Pekerjaan</h2>
 
-  <div class="row container main-lowongan">
+  <div class="row container main-lowongan m-0">
 
     <div class="contaner side-bar col-md-4">
       <div class="side-bar py-3">
@@ -54,7 +54,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ $lowongan->title_lowongan }}</h5>
           <small> 
-            @if ($lowongan->status === true )
+            @if ($lowongan->status == true )
             <b class="text-primary">DIBUKA </b> <i class="bi bi-calendar3"></i> {{ $lowongan->tgl_tutup }}
             @else
             <b class="text-danger">DITUTUP </b> <i class="bi bi-calendar3"></i> {{ $lowongan->tgl_tutup }}

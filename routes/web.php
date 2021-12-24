@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LowonganController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,12 +41,14 @@ Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show'
 //     ]);
 // });
 
-Route::get('/informasi', function () {
-    return view('informasi', [
-        "title" => "Informasi",
-        "active" => 'informasi'
-    ]);
-});
+
+Route::get('/informasi',[InformasiController::class, 'index']);
+// Route::get('/informasi', function () {
+//     return view('informasi', [
+//         "title" => "Informasi",
+//         "active" => 'informasi'
+//     ]);
+// });
 
 //halaman detail lowongan
 Route::get('lowongan/{slug_lowongan}', function($slug_lowongan) {

@@ -14,10 +14,10 @@
           Bersama Bursa Kerja Khusus (BKK) SMK Muhammadiyah Kandanghaur
         </div>
         <div class="button-header item-fluid">
-          <button class="btn btn-listing">
+          <a href="/lowongan" class="btn btn-listing py-3">
             <i class="bi bi-search"></i>
               Cari Sekarang
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -143,27 +143,28 @@
     <div class="container">
       <div class="row flex-lg-row-reverse justify-content-center align-items-center ">
         <div class="col-lg">
-            <img class="d-block img-fluid" src="/img/smk.jpg" alt="">
+            <img class="d-block img-fluid rounded shadow" src="/img/smk-full.jpg" alt="">
           {{-- <img src="https://source.unsplash.com/600x400" class="d-flex img-fluid h-600" alt="Bootstrap Themes" loading="lazy"> --}}
         </div>
         <div class="col-lg px-4 mt-3">
-          <h1 class="display-5 fw-bold lh-1 mb-3">SMK Muhammadiyah Kandanghaur</h1>
-          <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+          <h2 class="display-6 fw-bold lh-1 mb-3">BKK <br> SMK Muhammadiyah Kandanghaur</h2>
+          <p class="lead">Merupakan sekolah menengah kerjuruan swasta yang berakreditasi A, yang berada di wilayah kecamatan Kandanghaur, Indramayu. Dengan berbagai macam jurusan keahlian yang tersedia.</p>
             <p class="fw-normal"> <i class="bi bi-geo-alt-fill"></i>
                Jl. Raya Kandanghaur No.28 A, Karanganyar, Kec. Kandanghaur,
               Kabupaten Indramayu, Jawa Barat 45254
             </p>
             <p class="fw-normal">
               <i class="bi bi-phone-fill"></i>
-               +6282213313423
+              (0234) 507239
             </p>
             <p class="fw-normal">
               <i class="bi bi-envelope-fill"> </i>
-               bkk.muh_kdh@gmail.com
+              bkkmuhkdh@gmail.com 
             </p>
           </div>
         </div>
       </div>
+
     </div>
 
   </div>

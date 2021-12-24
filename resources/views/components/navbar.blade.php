@@ -1,7 +1,7 @@
 <nav class="navbar-1-1 navbar navbar-expand-lg sticky-top navbar-dark p-2 px-md-2 mb-0 shadow"
 style="font-family: Poppins, sans-serif">
 <div class="container">
-  <a class="navbar-brand" href="/">BKK</a>
+  <a class="navbar-brand" href="/"><img src="img/logo-header.png" alt=""></a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
     aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
