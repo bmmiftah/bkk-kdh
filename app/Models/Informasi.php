@@ -17,7 +17,7 @@ class Informasi extends Model
         return $this->belongsTo(Category::class);
     }
    
-    public function Perushaan()
+    public function Perusahaan()
     {
         return $this->belongsTo(Perusahaan::class);
     }

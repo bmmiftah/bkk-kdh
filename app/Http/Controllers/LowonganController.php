@@ -14,7 +14,14 @@ class LowonganController extends Controller
      */
     public function index()
     {
-        //
+       return view('lowongan', [
+
+        "title" => "All Lowongan",
+        // "lowongans" => Lowongan::latest()->paginate(4)->withQueryString()
+        "lowongans" => Lowongan::all()
+       ]);
+
+      
     }
 
     /**
@@ -46,7 +53,10 @@ class LowonganController extends Controller
      */
     public function show(lowongan $lowongan)
     {
-        //
+        return view('detail_lowongan', [
+            "title" => 'Detail Lowongan',
+            "detail_lowongan" => $lowongan 
+        ]);
     }
 
     /**
@@ -83,3 +93,4 @@ class LowonganController extends Controller
         //
     }
 }
+

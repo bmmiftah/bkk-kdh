@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class lowongan extends Model
+class Lowongan extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
 
-    public function perusahaans()
+    public function perusahaan()
     {
         return $this->belongsTo(Perusahaan::class);
     }
