@@ -43,12 +43,14 @@ Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show'
 
 
 Route::get('/informasi',[InformasiController::class, 'index']);
-// Route::get('/informasi', function () {
-//     return view('informasi', [
-//         "title" => "Informasi",
-//         "active" => 'informasi'
-//     ]);
-// });
+// Route::get('/detail_informasi',[InformasiController::class, 'show']);
+
+Route::get('/detail_informasi', function () {
+    return view('detail_informasi', [
+        "title" => "Informasi",
+        "active" => 'informasi'
+    ]);
+});
 
 //halaman detail lowongan
 Route::get('lowongan/{slug_lowongan}', function($slug_lowongan) {
