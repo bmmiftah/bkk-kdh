@@ -13,9 +13,19 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+    // protected function schedule(Schedule $schedule)
+    // {
+    //     // $schedule->command('inspire')->hourly();
+    // }
+
+    protected $commands = [
+        Commands\DemoCron::class,
+    ];
+
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('demo:cron')
+                ->daily();
     }
 
     /**
