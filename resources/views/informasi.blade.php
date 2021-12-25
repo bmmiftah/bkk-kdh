@@ -47,7 +47,7 @@
 
     </div>
 
-    <div class="row container main-lowongan">
+    <div class="row container main-lowongan m-0">
 
       <div class="contaner side-bar col-md-4">
         <div class="side-bar py-3">
@@ -88,15 +88,14 @@
 
   <div class="container mb-5 col-md-8 ">
 
-    <div class="row">
+    <div class="row px-3">
 
 @foreach ($informasis as $informasi )
-  
 
-<div class=" col-lg-6 px-0 card item-fluid mt-lg-3">
-  <img src="/img/informasi.jpg" class="card-img-top " alt="...">
+<div class=" px-0 card mb-3 shadow-sm item-fluid mt-lg-3">
+  <img src="/img/img-info.jpg" class="card-img-top" style="height: 200px; object-fit:cover;" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{ $informasi->title_informasi }}</h5>
+    <a href="/detail_informasi/{{ $informasi->slug }}"><h5 class="card-title">{{ $informasi->title_informasi }}</h5></a>
     <small class="card-text text-muted">{{ $informasi->Category->title_category }}</small>
     <p class="card-text">{{ $informasi->excerpt }}</p>
   </div>

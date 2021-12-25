@@ -49,7 +49,10 @@ class InformasiController extends Controller
      */
     public function show(Informasi $informasi)
     {
-        //
+        return view('detail_informasi',[
+            "title" => 'Detail_informasi',
+            "detail_informasi" => $informasi
+        ]);
     }
 
     /**

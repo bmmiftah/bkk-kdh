@@ -1,4 +1,4 @@
-<nav class="navbar-1-1 navbar navbar-expand-lg sticky-top navbar-dark p-2 px-md-2 mb-0 shadow"
+<nav class="navbar-1-1 navbar navbar-expand-lg sticky-top navbar-dark p-2 px-md-2 mb-0 shadow-sm"
 style="font-family: Poppins, sans-serif">
 <div class="container">
   <a class="navbar-brand" href="/"><img src="img/logo-header.png" alt=""></a>

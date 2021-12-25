@@ -42,17 +42,18 @@ Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show'
 // });
 
 
+// halaman informasi dan detail informasi
 Route::get('/informasi',[InformasiController::class, 'index']);
-// Route::get('/detail_informasi',[InformasiController::class, 'show']);
+Route::get('/detail_informasi/{informasi:slug}',[InformasiController::class, 'show']);
 
-Route::get('/detail_informasi', function () {
-    return view('detail_informasi', [
-        "title" => "Informasi",
-        "active" => 'informasi'
-    ]);
-});
+// Route::get('/detail_informasi', function () {
+//     return view('detail_informasi', [
+//         "title" => "Informasi",
+//         "active" => 'informasi'
+//     ]);
+// });
 
-//halaman detail lowongan
+//halaman lowongan dan detail lowongan
 Route::get('lowongan/{slug_lowongan}', function($slug_lowongan) {
     return view('detail_lowongan');
 });
