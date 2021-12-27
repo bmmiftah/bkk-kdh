@@ -95,8 +95,9 @@
 <div class=" px-0 card mb-3 shadow-sm item-fluid mt-lg-3">
   <img src="/img/img-info.jpg" class="card-img-top" style="height: 200px; object-fit:cover;" alt="...">
   <div class="card-body">
-    <a href="/detail_informasi/{{ $informasi->slug }}"><h5 class="card-title">{{ $informasi->title_informasi }}</h5></a>
+    <a style="text-decoration: none;" href="/detail_informasi/{{ $informasi->slug }}"><h4 class="card-title">{{ $informasi->title_informasi }}</h4></a>
     <small class="card-text text-muted">{{ $informasi->Category->title_category }}</small>
+    <hr>
     <p class="card-text">{{ $informasi->excerpt }}</p>
   </div>
 </div>

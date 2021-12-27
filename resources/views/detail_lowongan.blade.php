@@ -7,7 +7,7 @@
 
     <div class="row info align-items-md-stretch">
 
-        <div class="col-md-7 mb-2">
+        <div class="col-md-7 mb-2 rounded-5">
           
             <div class="accordion" style="background-color: #fefefe" id="accordionPanelsStayOpenExample">
                 <div class="accordion-item">
@@ -52,7 +52,7 @@
 
         <div class="col-md-5">
 
-            <div class="item-fluid p-5 border rounded-3" style="background-color: #fefefe">
+            <div class="item-fluid p-5 shadow-sm border rounded-5" style="background-color: #fefefe">
                 <h2>{{ $detail_lowongan->title_lowongan }}</h2>
                 <p>{{ $detail_lowongan->perusahaan->nama_perusahaan }}</p>
                 <hr>

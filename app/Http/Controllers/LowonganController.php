@@ -18,7 +18,6 @@ class LowonganController extends Controller
 
         "title" => "Semua Lowongan",
         // "lowongans" => Lowongan::latest()->paginate(4)->withQueryString()
-        "active" => 'lowongan',
         "lowongans" => Lowongan::all()
        ]);
 
@@ -56,7 +55,6 @@ class LowonganController extends Controller
     {
         return view('detail_lowongan', [
             "title" => 'Detail Lowongan',
-            "active" => 'lowongan',
             "detail_lowongan" => $lowongan 
         ]);
     }

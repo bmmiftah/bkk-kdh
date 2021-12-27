@@ -19,7 +19,7 @@ class CreateProfilsTable extends Migration
             $table->text('alamat');
             $table->string('sekolah');
             $table->string('no_hp');
-            $table->string('avatar');
+            $table->string('avatar')->default('avatar.png');
             $table->timestamps();
             $table->softDeletes();
         });

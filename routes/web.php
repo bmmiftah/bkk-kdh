@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
+use App\Http\Controllers\RegisterController;
+use App\Models\Pengurus;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,12 +31,13 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', [
         "title" => "Tentang",
-        "active" => 'about'
+        "active" => 'about',
+        // "pengurus" => Pengurus::all()
     ]);
 });
 
 Route::get('/lowongan',[LowonganController::class, 'index']);
-Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show']);
+Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show'])->middleware('auth');
 
 // Route::get('/detail_lowongan', function () {
 //     return view('detail_lowongan', [
@@ -54,13 +59,24 @@ Route::get('/detail_informasi/{informasi:slug}',[InformasiController::class, 'sh
 // });
 
 //halaman lowongan dan detail lowongan
-Route::get('lowongan/{slug_lowongan}', function($slug_lowongan) {
-    return view('detail_lowongan');
-});
+// Route::get('lowongan/{slug_lowongan}', function($slug_lowongan) {
+//     return view('detail_lowongan');
+// });
+
+
+// login
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+// register
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+// Route::get('/dashboard', function() {
+//     return view('dashboard.index');
+// })->middleware('auth');
