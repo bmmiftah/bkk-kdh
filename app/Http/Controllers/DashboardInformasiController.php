@@ -41,6 +41,8 @@ class DashboardInformasiController extends Controller
             'perusahaans' => $perusahaan,
             'title' => "Informasi"
         ]);
+
+        // $validatedData['excerpt'] = Str::limit(strip_tags($request->isi_informasi), 200);
     }
 
     /**
@@ -51,7 +53,7 @@ class DashboardInformasiController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $validateData = $request->validate([
             'title_informasi' => 'required|max:255',
             'slug' => 'required|unique:informasis',
             'category_id' => 'required',
@@ -60,9 +62,9 @@ class DashboardInformasiController extends Controller
         
 
         // $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->isi_informasi), 200);
+        $validateData['excerpt'] = Str::limit(strip_tags($request->isi_informasi), 200);
 
-        Informasi::create($validatedData);
+        Informasi::create($validateData);
 
         return redirect('/dashboard/informasi')->with('success', 'Informasi Baru telah ditambahkan!');
         

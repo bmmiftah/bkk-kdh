@@ -36,6 +36,8 @@ class DashboardLowonganController extends Controller
             'perusahaans' => $perusahaan,
             'title' => "Lowongan"
         ]);
+
+        // $validatedData['excerpt'] = Str::limit(strip_tags($request->detail_lowongan), 200);
     }
 
     /**
@@ -56,7 +58,7 @@ class DashboardLowonganController extends Controller
             'kriteria_lowongan' => 'required'
         ]);
 
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->detail_lowongan), 200);
+        $validateData['excerpt'] = Str::limit(strip_tags($request->detail_lowongan), 200);
 
         Lowongan::create($validateData);
 

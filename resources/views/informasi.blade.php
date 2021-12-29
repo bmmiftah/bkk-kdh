@@ -64,19 +64,19 @@
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
-               <a href="">Semua Informasi</a>
+               <a style="text-decoration: none;" href="">Semua Informasi</a>
               </li>
               <li class="list-group-item">
-                <a href="">Hasil Pengumpulan Berkas</a>
+                <a style="text-decoration: none" href="">Hasil Pengumpulan Berkas</a>
               </li>
               <li class="list-group-item">
-                <a href="">Hasil Sikotes</a>
+                <a style="text-decoration: none" href="">Hasil Sikotes</a>
               </li>
               <li class="list-group-item">
-                <a href="">Hasil Interview</a>
+                <a style="text-decoration: none" href="">Hasil Interview</a>
               </li>
               <li class="list-group-item">
-                <a href="">Hasil MCU</a>
+                <a style="text-decoration: none" href="">Hasil MCU</a>
               </li>
             </ul>
           </div>
@@ -95,10 +95,10 @@
 <div class=" px-0 card mb-3 shadow-sm item-fluid mt-lg-3">
   <img src="/img/img-info.jpg" class="card-img-top" style="height: 200px; object-fit:cover;" alt="...">
   <div class="card-body">
-    <a style="text-decoration: none;" href="/detail_informasi/{{ $informasi->slug }}"><h4 class="card-title">{{ $informasi->title_informasi }}</h4></a>
+    <a style="text-decoration: none;" href="/detail_informasi/{{ $informasi->slug }}"><h4 class="card-title">{!! $informasi->title_informasi !!}</h4></a>
     <small class="card-text text-muted">{{ $informasi->Category->title_category }}</small>
     <hr>
-    <p class="card-text">{{ $informasi->excerpt }}</p>
+    <p class="card-text">{!! $informasi->excerpt !!}</p>
   </div>
 </div>
 
