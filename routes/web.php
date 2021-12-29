@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardInformasiController;
+use App\Http\Controllers\DashboardLowonganController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
@@ -83,9 +84,13 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 //     return view('dashboard.index');
 // })->middleware('auth');
 
+// Dashboard Informasi
 // slug
 Route::get('/dashboard/informasi/checkSlug', [DashboardInformasiController::class, 'checkSlug'])->middleware('auth');
 
-// Route::get('/dashboard_informasi', [DashboardInformasiController::class, 'index']);
-// Route::get('/tambah_informasi', [DashboardInformasiController::class, 'create']);
 Route::resource('/dashboard/informasi', DashboardInformasiController::class)->middleware('auth');
+
+// Dashboard Lowongan
+Route::get('/dashboard/lowongan/checkSlug', [DashboardLowonganController::class, 'checkSlug'])->middleware('auth');
+
+Route::resource('/dashboard/lowongan', DashboardLowonganController::class)->middleware('auth');

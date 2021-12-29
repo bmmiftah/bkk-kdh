@@ -7,7 +7,7 @@
     <!-- Basic Card Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i>Buat Informasi Baru</h6>
+            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-edit fa-sm fa-fw mr-2 text-gray-400"></i>Edit Informasi | {{ $informasi->title_informasi }}</h6>
         </div>
         <div class="card-body mx-10">
             <form method="post" action="/dashboard/informasi/{{ $informasi->slug }}" class="mb-5" enctype="multipart/form-data">
@@ -34,7 +34,7 @@
                 </div>
         
                 <div class="mb-3">
-                  <label for="category" class="form-label">Kategori Informasi</label>
+                  <label for="category" class="form-control">Kategori Informasi</label>
                   <br>
                   <select class="form-select" name="category_id">
                     @foreach ($categories as $category )
@@ -50,7 +50,7 @@
                 <div class="mb-3">
                   <label for="perusahaan" class="form-label">Perusahaan</label>
                   <br>
-                  <select class="form-select" name="perusahaan_id">
+                  <select class="form-control" name="perusahaan_id">
                       <option value="" selected>Tanpa Perusahaan</option>
                     @foreach ($perusahaans as $perusahaan )
                      @if (old('perusahaan_id', $informasi->perusahaan_id) == $perusahaan->id)

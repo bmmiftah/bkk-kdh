@@ -18,9 +18,10 @@ class CreateLowongansTable extends Migration
             $table->string('title_lowongan')->unique();
             $table->string('slug')->unique();
             $table->foreignId('perusahaan_id');
+            $table->string('excerpt')->nullable();
             $table->text('detail_lowongan');
             $table->text('kriteria_lowongan');
-            $table->text('informasi_tambahan');
+            $table->text('informasi_tambahan')->nullable();
             $table->date('tgl_buka');
             $table->date('tgl_tutup');
             $table->boolean('status')->default(true);

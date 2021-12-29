@@ -35,7 +35,7 @@
                 <div class="mb-3">
                   <label for="category" class="form-label">Kategori Informasi</label>
                   <br>
-                  <select class="form-select" name="category_id">
+                  <select class="form-control" name="category_id">
                     @foreach ($categories as $category )
                      @if (old('category_id') == $category->id)
                         <option value="{{ $category->id }}" selected>{{ $category->title_category }}</option>
@@ -49,7 +49,7 @@
                 <div class="mb-3">
                   <label for="perusahaan" class="form-label">Perusahaan</label>
                   <br>
-                  <select class="form-select" name="perusahaan_id">
+                  <select class="form-control" name="perusahaan_id">
                       <option value="" selected>Tanpa Perusahaan</option>
                     @foreach ($perusahaans as $perusahaan )
                      @if (old('perusahaan_id') == $perusahaan->id)

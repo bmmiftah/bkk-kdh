@@ -61,7 +61,7 @@
             @endif
           </small>
           <br> <hr>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iste alias et esse asperiores. Optio architecto corporis, temporibus quod nam labore a veniam sequi expedita magnam neque, ex deserunt accusantium.</p>
+          <p class="card-text">{{ $lowongan->excerpt }}</p>
           <a href="/detail_lowongan/{{ $lowongan->slug }}" class="btn btn-primary">Lihat Lebih</a>
         </div>
       </div>

@@ -38,7 +38,7 @@ class DashboardInformasiController extends Controller
 
         return view('dashboard.informasi.create', [
             'categories' => $category,
-            'perusahaans' =>$perusahaan,
+            'perusahaans' => $perusahaan,
             'title' => "Informasi"
         ]);
     }
@@ -60,11 +60,11 @@ class DashboardInformasiController extends Controller
         
 
         // $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->isi_informasi), 100);
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->isi_informasi), 200);
 
         Informasi::create($validatedData);
 
-        return redirect('/dashboard/informasi')->with('success', 'New information has been added!');
+        return redirect('/dashboard/informasi')->with('success', 'Informasi Baru telah ditambahkan!');
         
 
 
@@ -128,7 +128,7 @@ class DashboardInformasiController extends Controller
 
         $validatedData['perusahaan_id'] = $request->perusahaan_id;
 
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->isi_informasi), 100);
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->isi_informasi), 200);
 
         Informasi::where('id', $informasi->id)->update($validatedData);
 
