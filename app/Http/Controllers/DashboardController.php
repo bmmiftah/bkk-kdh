@@ -14,7 +14,9 @@ class DashboardController extends Controller
         ->where('status', 1)
         ->count();
 
-        $informasis = DB::table('informasis')->count();
+        $informasis = DB::table('informasis')
+        ->where('deleted_at', NULL)
+        ->count();
 
         $perusahaans = DB::table('perusahaans')->count();
 
@@ -22,7 +24,8 @@ class DashboardController extends Controller
             'users' => $users,
             'lowongans' => $lowongans,
             'informasis' => $informasis,
-            'perusahaans' => $perusahaans
+            'perusahaans' => $perusahaans,
+            'title' => "Dashboard"
         ]);
 
         

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardInformasiController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
@@ -29,6 +30,7 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
+
     return view('about', [
         "title" => "Tentang",
         "active" => 'about',
@@ -75,8 +77,15 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-
+// dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 // Route::get('/dashboard', function() {
 //     return view('dashboard.index');
 // })->middleware('auth');
+
+// slug
+Route::get('/dashboard/informasi/checkSlug', [DashboardInformasiController::class, 'checkSlug'])->middleware('auth');
+
+// Route::get('/dashboard_informasi', [DashboardInformasiController::class, 'index']);
+// Route::get('/tambah_informasi', [DashboardInformasiController::class, 'create']);
+Route::resource('/dashboard/informasi', DashboardInformasiController::class)->middleware('auth');
