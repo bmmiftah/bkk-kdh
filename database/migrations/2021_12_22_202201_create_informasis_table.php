@@ -15,10 +15,10 @@ class CreateInformasisTable extends Migration
     {
         Schema::create('informasis', function (Blueprint $table) {
             $table->id();
+            $table->string('title_informasi');
+            $table->string('slug')->unique();
             $table->foreignId('category_id');
             $table->foreignId('perusahaan_id')->nullable();
-            $table->string('title_informasi')->unique();
-            $table->string('slug')->unique();
             $table->string('img_informasi')->nullable();
             $table->string('excerpt');
             $table->text('isi_informasi');

@@ -18,6 +18,54 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
+ <!-- Divider -->
+ <hr class="sidebar-divider">
+
+ <!-- Heading -->
+ <div class="sidebar-heading">
+     Tampilan
+ </div>
+
+ <!-- Admin access - carousell-informasi collapse menu -->
+ <li class="nav-item">
+     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCarousell"
+         aria-expanded="true" aria-controls="collapseTwo">
+         <i class="fas fa-fw fa-info"></i>
+         <span>Carousell Informasi</span>
+     </a>
+     <div id="collapseCarousell" class="collapse" aria-labelledby="headingCarousell" data-parent="#accordionSidebar">
+         <div class="bg-white py-2 collapse-inner rounded">
+             <h6 class="collapse-header">Atur Carousell:</h6>
+             
+             {{-- tambah data informasi --}}
+             <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
+
+             {{-- lihat tabel data informasi --}}
+             <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
+
+         </div>
+     </div>
+ </li>
+
+ <!-- admin access - pengurus Collapse Menu -->
+ <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePengurus"
+        aria-expanded="true" aria-controls="collapsePengurus">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Pengurus</span>
+    </a>
+    <div id="collapsePengurus" class="collapse" aria-labelledby="headingPengurus"
+        data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Atur Pengurus:</h6>
+        {{-- tambah data pengurus --}}
+        <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
+
+        {{-- lihat tabel data pengurus --}}
+        <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
+        </div>
+    </div>
+</li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -41,7 +89,7 @@
                 {{-- tambah data informasi --}}
                 <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
 
-                {{-- lihat tambel data informasi --}}
+                {{-- lihat tabel data informasi --}}
                 <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
 
             </div>
@@ -62,7 +110,7 @@
                 {{-- tambah data informasi --}}
                 <a class="collapse-item" href="/dashboard/lowongan/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
 
-                {{-- lihat tambel data informasi --}}
+                {{-- lihat tabel data informasi --}}
                 <a class="collapse-item" href="/dashboard/lowongan"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
             </div>
         </div>
@@ -82,7 +130,7 @@
                {{-- tambah data informasi --}}
                <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
 
-               {{-- lihat tambel data informasi --}}
+               {{-- lihat tabel data informasi --}}
                <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
             </div>
         </div>
@@ -96,26 +144,6 @@
         Kontrol
     </div>
 
-    <!-- super admin access - pengurus Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePengurus"
-            aria-expanded="true" aria-controls="collapsePengurus">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Pengurus</span>
-        </a>
-        <div id="collapsePengurus" class="collapse" aria-labelledby="headingPengurus"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Atur Pengurus:</h6>
-            {{-- tambah data pengurus --}}
-            <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
-
-            {{-- lihat tambel data pengurus --}}
-            <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
-            </div>
-        </div>
-    </li>
-
     <!-- super admin access - perusahaan Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePerusahaan"
@@ -128,10 +156,30 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Atur Perusahaan:</h6>
             {{-- tambah data Perusahaan --}}
-            <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
+            <a class="collapse-item" href="/dashboard/perusahaan/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
 
-            {{-- lihat tambel data Perusahaan --}}
-            <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
+            {{-- lihat tabel data Perusahaan --}}
+            <a class="collapse-item" href="/dashboard/perusahaan"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- super admin access - Users Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
+            aria-expanded="true" aria-controls="collapseUsers">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Users</span>
+        </a>
+        <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Atur Users:</h6>
+            {{-- tambah data Users --}}
+            <a class="collapse-item" href="/dashboard/perusahaan/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
+
+            {{-- lihat tabel data Users --}}
+            <a class="collapse-item" href="/dashboard/perusahaan"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
             </div>
         </div>
     </li>

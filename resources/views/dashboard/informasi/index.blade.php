@@ -21,7 +21,7 @@
                         <th scope="col">Judul Informasi</th>
                         <th scope="col">Kategori</th>
                         <th scope="col">Perusahaan</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                

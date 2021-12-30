@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Perusahaan extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Sluggable;
 
     protected $guarded = ['id'];
 
@@ -21,4 +22,19 @@ class Perusahaan extends Model
     {
         return $this->hasMany(Informasi::class);
     }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'nama_perusahaan'
+            ]
+        ];
+    }
+
+    public function getRouteKeyName()
+    {
+    return 'slug';
+    }
 }
+

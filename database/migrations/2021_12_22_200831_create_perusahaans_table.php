@@ -17,7 +17,7 @@ class CreatePerusahaansTable extends Migration
             $table->id();
             $table->string('nama_perusahaan')->unique();
             $table->string('slug')->unique();
-            $table->text('alamat_perusahaan');
+            $table->text('detail_perusahaan')->nullable();
             $table->timestamps();
             $table->softDeletes()->nullable();
         });

@@ -20,7 +20,7 @@
 
                         <div class="body-informasi">
 
-                            <p>{{ $detail_informasi->isi_informasi }}</p>
+                            <p>{!! $detail_informasi->isi_informasi !!}</p>
 
                         </div>
                         

@@ -98,17 +98,17 @@ class DatabaseSeeder extends Seeder
         Perusahaan::create([
             'nama_perusahaan' => 'PT. Astra Honda Motor',
             'slug' => 'pt-astra-honda-motor',
-            'alamat_perusahaan' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam quae voluptatem voluptatum rerum eius facilis quis exercitationem asperiores aperiam.'
+            'detail_perusahaan' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam quae voluptatem voluptatum rerum eius facilis quis exercitationem asperiores aperiam.'
         ]);
         Perusahaan::create([
             'nama_perusahaan' => 'PT. Toyota',
             'slug' => 'pt-toyota',
-            'alamat_perusahaan' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam quae voluptatem voluptatum rerum eius facilis quis exercitationem asperiores aperiam.'
+            'detail_perusahaan' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam quae voluptatem voluptatum rerum eius facilis quis exercitationem asperiores aperiam.'
         ]);
         Perusahaan::create([
             'nama_perusahaan' => 'PT. Tech Inovation Sejahtera',
             'slug' => 'pt-tech-inovation-sejahtera',
-            'alamat_perusahaan' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam quae voluptatem voluptatum rerum eius facilis quis exercitationem asperiores aperiam.'
+            'detail_perusahaan' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam quae voluptatem voluptatum rerum eius facilis quis exercitationem asperiores aperiam.'
         ]);
 
         //lowongan seeders
