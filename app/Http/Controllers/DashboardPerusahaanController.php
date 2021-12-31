@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Perusahaan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardPerusahaanController extends Controller
@@ -41,11 +42,16 @@ class DashboardPerusahaanController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
         $validateData = $request->validate([
             'nama_perusahaan' => 'required|max:255',
             'slug' => 'required|unique:perusahaans',
             'detail_perusahaan' => 'required'
         ]);
+
+        $validateData['nama_perusahaan']=Str::upper($validateData['nama_perusahaan']);
 
         Perusahaan::create($validateData);
 
@@ -95,8 +101,11 @@ class DashboardPerusahaanController extends Controller
             $rules['slug'] = 'required|unique:perusahaans';
         }
 
+        
         $validatedData = $request->validate($rules);
-
+        
+        $validatedData['nama_perusahaan']=Str::upper($validatedData['nama_perusahaan']);
+        
         Perusahaan::where('id', $perusahaan->id)->update($validatedData);
 
         return redirect('/dashboard/perusahaan')->with('success', 'Perusahaan telah terupdate!');

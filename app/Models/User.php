@@ -46,6 +46,11 @@ class User extends Authenticatable
         return $this->hasMany(Informasi::class);
     }
 
+    public function getRouteKeyName()
+    {
+    return 'username';
+    }
+
     
 
     /**
@@ -66,4 +71,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
 }

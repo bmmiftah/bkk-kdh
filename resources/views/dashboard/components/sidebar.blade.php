@@ -176,10 +176,10 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Atur Users:</h6>
             {{-- tambah data Users --}}
-            <a class="collapse-item" href="/dashboard/perusahaan/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
+            <a class="collapse-item" href="/dashboard/users/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
 
             {{-- lihat tabel data Users --}}
-            <a class="collapse-item" href="/dashboard/perusahaan"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
+            <a class="collapse-item" href="/dashboard/users"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
             </div>
         </div>
     </li>

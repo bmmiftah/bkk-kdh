@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardInformasiController;
 use App\Http\Controllers\DashboardLowonganController;
 use App\Http\Controllers\DashboardPerusahaanController;
+use App\Http\Controllers\DashboardUsersController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
@@ -100,3 +101,8 @@ Route::resource('/dashboard/lowongan', DashboardLowonganController::class)->midd
 Route::get('/dashboard/perusahaan/checkSlug', [DashboardPerusahaanController::class, 'checkSlug'])->middleware('auth');
 
 Route::resource('/dashboard/perusahaan', DashboardPerusahaanController::class)->middleware('auth');
+
+// Dashboard Users
+Route::get('/dashboard/users/checkSlug', [DashboardUsersController::class, 'checkSlug'])->middleware('auth');
+
+Route::resource('/dashboard/users', DashboardUsersController::class)->middleware('auth');

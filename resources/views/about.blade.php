@@ -14,7 +14,7 @@
           </div>
           <div class="col-lg">
             <h3 class="display-6 fw-bold lh-1 mb-3">SMK Muhammadiyah Kandanghaur</h3>
-            <p>Merupakan sekolah menengah kerjuruan swasta yang berakreditasi A, yang berada di wilayah kecamatan Kandanghaur, Indramayu. Dengan berbagai macam jurusan keahlian yang tersedia.</p>
+            <p>Merupakan sekolah menengah kerjuruan swasta berakreditasi A, yang berada di wilayah kecamatan Kandanghaur, Indramayu. Dengan berbagai macam jurusan keahlian yang tersedia.</p>
             <p class="fw-normal"> <i class="bi bi-geo-alt-fill"></i>
                Jl. Raya Kandanghaur No.28 A, Karanganyar, Kec. Kandanghaur,
               Kabupaten Indramayu, Jawa Barat 45254
