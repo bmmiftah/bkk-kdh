@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardCarouselController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardInformasiController;
 use App\Http\Controllers\DashboardLowonganController;
@@ -103,6 +104,9 @@ Route::get('/dashboard/perusahaan/checkSlug', [DashboardPerusahaanController::cl
 Route::resource('/dashboard/perusahaan', DashboardPerusahaanController::class)->middleware('auth');
 
 // Dashboard Users
-Route::get('/dashboard/users/checkSlug', [DashboardUsersController::class, 'checkSlug'])->middleware('auth');
 
 Route::resource('/dashboard/users', DashboardUsersController::class)->middleware('auth');
+
+// Dashboard Carousell
+
+Route::resource('/dashboard/carousell', DashboardCarouselController::class)->middleware('auth');

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pendaftaran;
+use App\Models\Perusahaan;
+use App\Models\Profil;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PendaftaranController extends Controller
@@ -14,17 +17,13 @@ class PendaftaranController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $perusahaans = Perusahaan::all();
+        $user = User::all();
+        $profil = Profil::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('pendaftaran.index', [
+            'title' => 'Pendaftaran'
+        ]);
     }
 
     /**
@@ -35,51 +34,15 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'lowongan_id' => 'required',
+            'user_id' => 'required|unique',
+            'no_tes' => 'required',
+            'nik' => 'required|max:16|unique:profil',
+            
+
+        
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Pendaftaran  $pendaftaran
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Pendaftaran $pendaftaran)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Pendaftaran  $pendaftaran
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Pendaftaran $pendaftaran)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pendaftaran  $pendaftaran
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Pendaftaran $pendaftaran)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Pendaftaran  $pendaftaran
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Pendaftaran $pendaftaran)
-    {
-        //
-    }
 }

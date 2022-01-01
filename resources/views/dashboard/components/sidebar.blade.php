@@ -27,7 +27,7 @@
  </div>
 
  <!-- Admin access - carousell-informasi collapse menu -->
- <li class="nav-item">
+ {{-- <li class="nav-item">
      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCarousell"
          aria-expanded="true" aria-controls="collapseTwo">
          <i class="fas fa-fw fa-info"></i>
@@ -35,17 +35,17 @@
      </a>
      <div id="collapseCarousell" class="collapse" aria-labelledby="headingCarousell" data-parent="#accordionSidebar">
          <div class="bg-white py-2 collapse-inner rounded">
-             <h6 class="collapse-header">Atur Carousell:</h6>
+             <h6 class="collapse-header">Atur Carousell:</h6> --}}
              
-             {{-- tambah data informasi --}}
-             <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
+             {{-- tambah data Carousell --}}
+             {{-- <a class="collapse-item" href="/dashboard/carousell/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a> --}}
 
-             {{-- lihat tabel data informasi --}}
-             <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
+             {{-- lihat tabel data Carousell --}}
+             {{-- <a class="collapse-item" href="/dashboard/carousell"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
 
          </div>
      </div>
- </li>
+ </li> --}}
 
  <!-- admin access - pengurus Collapse Menu -->
  <li class="nav-item">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carousel;
 use App\Models\Informasi;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,13 @@ class InformasiController extends Controller
      */
     public function index()
     {
+
+        
+
         return view('informasi',[
             "title" => "Pusat Informasi",
-            "informasis" => Informasi::all()
+            "informasis" => Informasi::all(),
+            "carousells" => Carousel::all()
         ]);
     }
 
