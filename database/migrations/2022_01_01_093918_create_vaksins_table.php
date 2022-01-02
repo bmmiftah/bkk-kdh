@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfilsTable extends Migration
+class CreateVaksinsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateProfilsTable extends Migration
      */
     public function up()
     {
-        Schema::create('profils', function (Blueprint $table) {
+        Schema::create('vaksins', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('nik');
-            $table->text('alamat');
-            $table->string('sekolah');
-            $table->string('no_hp');
-            $table->string('jenis_kelamin');
-            $table->string('avatar')->default('avatar.png');
+            $table->string('jenis_vaksin_1');
+            $table->date('tgl_vaksin_1');
+            $table->string('kota_vaksin_1');
+            $table->string('img_bukti_1');
+            $table->string('jenis_vaksin_2');
+            $table->date('tgl_vaksin_2');
+            $table->string('kota_vaksin_2');
+            $table->string('img_bukti_2');
             $table->timestamps();
             $table->softDeletes()->nullable();
         });
@@ -34,6 +36,6 @@ class CreateProfilsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profils');
+        Schema::dropIfExists('vaksins');
     }
 }

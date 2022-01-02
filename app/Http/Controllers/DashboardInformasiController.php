@@ -94,6 +94,8 @@ class DashboardInformasiController extends Controller
      */
     public function edit(Informasi $informasi)
     {
+        dd($informasi);
+
         $category = Category::all();
         $perusahaans = Perusahaan::all();
 

@@ -10,7 +10,7 @@
           
           
           {{-- <div class="carousel-inner mb-4">
-            @foreach ($carousells as $carousell )
+            @foreach ($carousells as $carousell)
               <div class="carousel-item active">
                   <img src="/{{ $carousell->img_carousel }}" class="d-block w-100" alt="..." style="object-fit: cover; height: 400px;">
                   <div class="carousel-caption d-none d-md-block">
@@ -19,9 +19,9 @@
               </div>
             @endforeach
             </div>
-             --}}
             
-            {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
@@ -29,8 +29,8 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-          </div> --}}
-
+          </div>  --}}
+            
     </div>
 
     <div class="row container main-lowongan m-0">

@@ -59,10 +59,10 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Atur Pengurus:</h6>
         {{-- tambah data pengurus --}}
-        <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
+        <a class="collapse-item" href="/dashboard/pengurus/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
 
         {{-- lihat tabel data pengurus --}}
-        <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
+        <a class="collapse-item" href="/dashboard/pengurus"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
         </div>
     </div>
 </li>

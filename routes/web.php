@@ -4,7 +4,9 @@ use App\Http\Controllers\DashboardCarouselController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardInformasiController;
 use App\Http\Controllers\DashboardLowonganController;
+use App\Http\Controllers\DashboardPengurusController;
 use App\Http\Controllers\DashboardPerusahaanController;
+use App\Http\Controllers\DashboardProfilController;
 use App\Http\Controllers\DashboardUsersController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LoginController;
@@ -81,8 +83,11 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-// dashboard
+// dashboard_admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+// dashboard_profil
+Route::get('/profil', [DashboardProfilController::class, 'index'])->middleware('auth');
 // Route::get('/dashboard', function() {
 //     return view('dashboard.index');
 // })->middleware('auth');
@@ -110,3 +115,7 @@ Route::resource('/dashboard/users', DashboardUsersController::class)->middleware
 // Dashboard Carousell
 
 Route::resource('/dashboard/carousell', DashboardCarouselController::class)->middleware('auth');
+
+// Dashboard Carousell
+
+Route::resource('/dashboard/pengurus', DashboardPengurusController::class)->middleware('auth');

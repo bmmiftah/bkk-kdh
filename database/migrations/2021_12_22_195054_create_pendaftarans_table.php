@@ -31,7 +31,7 @@ class CreatePendaftaransTable extends Migration
             $table->string('kota_vaksin_2');
             $table->string('img_bukti_2');
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes()->nullable();
         });
     }
 

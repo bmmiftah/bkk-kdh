@@ -25,7 +25,7 @@ style="font-family: Poppins, sans-serif">
     <ul class="navbar-nav ms-auto">
       @auth
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="/profil" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle"></i> {{ auth()->user()->username }}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

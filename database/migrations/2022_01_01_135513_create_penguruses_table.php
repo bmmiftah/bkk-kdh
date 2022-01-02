@@ -13,12 +13,13 @@ class CreatePengurusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('penguruses', function (Blueprint $table) {
+        Schema::create('Penguruses', function (Blueprint $table) {
             $table->id();
-            $table->string('Nama');
+            $table->string('nama');
             $table->string('jabatan');
             $table->string('img_pengurus');
             $table->timestamps();
+            $table->softDeletes()->nullable();
         });
     }
 
@@ -29,6 +30,6 @@ class CreatePengurusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('penguruses');
+        Schema::dropIfExists('Penguruses');
     }
 }

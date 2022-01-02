@@ -71,8 +71,10 @@ class DashboardCarouselController extends Controller
      * @param  \App\Models\Carousel  $carousel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Carousel $carousel)
+    public function edit($id)
     {
+        $carousel = Carousel::findOrFail($id);
+
         return view('dashboard.Carousell.edit', [
             'carousel' => $carousel,
             'title' => 'Carousell'
@@ -86,23 +88,23 @@ class DashboardCarouselController extends Controller
      * @param  \App\Models\Carousel  $carousel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Carousel $carousel)
+    public function update(Request $request, $id)
     {
         $rules = [
             'title_carousel' => 'required|max:255',
-            'img_carousel' => 'required|file|max:1024' 
+            'img_carousel' => 'file|max:1024' 
         ];
         
         $validatedData = $request->validate($rules);
 
-        if($request->file('image')) {
+        if($request->file('img_carousel')) {
             if($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $validatedData['img_carousel'] = $request->file('image')->store('carousel-images');
+            $validatedData['img_carousel'] = $request->file('img_carousel')->store('carousel-images');
         }
 
-        Carousel::where('id', $carousel->id)->update($validatedData);
+        Carousel::where('id', $id)->update($validatedData);
 
         return redirect('/dashboard/carousell')->with('success', 'Data Carousell Informasi telah terupdate!');
 
@@ -114,10 +116,12 @@ class DashboardCarouselController extends Controller
      * @param  \App\Models\Carousel  $carousel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Carousel $carousel)
+    public function destroy($id)
     {
         // if ($carousel->img_carousel) {
         // }
+        $carousel = Carousel::findOrFail($id);
+        
         Storage::delete($carousel->img_carousel);
 
         Carousel::destroy($carousel->id);

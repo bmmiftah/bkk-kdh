@@ -22,15 +22,21 @@
                     </div>
                   @enderror
                 </div>
-        
-                <div class="mb-3">
-                    <label for="img_carousel" class="form-label @error('img_carousel') is-invalid @enderror">Gambar Carousell</label>
+
+                  <div class="mb-3">
+                    <label for="img_carousel" class="form-label @error('img_carousel') is-invalid @enderror">Gambar Carousel</label>
+                    <input type="hidden" name="oldImage" value="{{ $carousel->img_carousel }}">
+                    @if ($carousel->img_carousel)
+                    <img src="{{ asset('storage/' . $carousel->img_carousel) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                    @else
                     <img class="img-preview img-fluid mb-3 col-sm-5">
-                    <input name="img_carousel" class="form-control" type="file" id="img_carousel" name="img_carousel" onchange="previewImage()">
+                    @endif
+                    <img class="img-preview img-fluid mb-3 col-sm-5">
+                    <input class="form-control" type="file" id="img_carousel" name="img_carousel" onchange="previewImage()">
                     @error('img_carousel')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
+                    <div class="invalid-feedback">
+                    {{ $message }}
+                    </div>
                     @enderror
                   </div>
                 
