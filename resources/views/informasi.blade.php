@@ -38,10 +38,17 @@
       <div class="contaner side-bar col-md-4">
         <div class="side-bar py-3">
   
+        <form action="/informasi"> 
+          @if (request('category'))
+          <input type="hidden" name="category" value="{{ request('category') }}">
+        @endif
+
           <div class="input-group mb-3"> 
-            <input type="text" class="form-control" placeholder="Cari Lowongan">
-            <button class="btn btn-primary" type="button" id="search" name="search"><i class="bi bi-search"></i> Cari</button>
+            <input type="text" class="form-control" placeholder="Cari Lowongan" name="search" value="{{ request('search') }}">
+            
+            <button class="btn btn-primary" type="sumbit"><i class="bi bi-search"></i> Cari</button>
           </div>
+        </form>
   
           <div class="card item-fluid">
             <img src="/img/informasi.jpg" class="card-img-top" alt="...">
@@ -49,21 +56,12 @@
               <h5 class="card-title m-0">Pusat Informasi</h5>
             </div>
             <ul class="list-group list-group-flush">
+              @foreach ($categories as $category )
+                
               <li class="list-group-item">
-               <a style="text-decoration: none;" href="">Semua Informasi</a>
+                <a style="text-decoration: none;" href="/informasi?category={{ $category->slug }}">{{ $category->title_category }}</a>
               </li>
-              <li class="list-group-item">
-                <a style="text-decoration: none" href="">Hasil Pengumpulan Berkas</a>
-              </li>
-              <li class="list-group-item">
-                <a style="text-decoration: none" href="">Hasil Sikotes</a>
-              </li>
-              <li class="list-group-item">
-                <a style="text-decoration: none" href="">Hasil Interview</a>
-              </li>
-              <li class="list-group-item">
-                <a style="text-decoration: none" href="">Hasil MCU</a>
-              </li>
+              @endforeach
             </ul>
           </div>
   
@@ -75,6 +73,7 @@
   <div class="container mb-5 col-md-8 ">
 
     <div class="row px-3">
+@if ($informasis->count())
 
 @foreach ($informasis as $informasi )
 
@@ -89,9 +88,18 @@
 </div>
 
 @endforeach
+@else
+<div class="card shadow-sm mt-3">
+
+  <p class="text-center fs-4 my-5">Informasi Yang Dicari Tidak Bisa Ditemukan</p>
+  
+</div>
+@endif
+{{ $informasis->links() }}
 
     </div>
     </div>
+
 </div>
 </div>
 

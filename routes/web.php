@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DashboardCarouselController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardInformasiController;
@@ -35,14 +36,16 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function () {
+Route::get('/tentang', [AboutController::class, 'index']);
 
-    return view('about', [
-        "title" => "Tentang",
-        "active" => 'about',
-        // "pengurus" => Pengurus::all()
-    ]);
-});
+// Route::get('/about', function () {
+
+//     return view('about', [
+//         "title" => "Tentang",
+//         "active" => 'about',
+//         // "pengurus" => Pengurus::all()
+//     ]);
+// });
 
 Route::get('/lowongan',[LowonganController::class, 'index']);
 Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show'])->middleware('auth');
@@ -87,7 +90,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 // dashboard_profil
-Route::get('/profil', [DashboardProfilController::class, 'index'])->middleware('auth');
+Route::resource('/profil', DashboardProfilController::class)->middleware('auth');
+// Route::get('/profil/personal', [DashboardProfilController::class, 'edit'])->middleware('auth');
 // Route::get('/dashboard', function() {
 //     return view('dashboard.index');
 // })->middleware('auth');

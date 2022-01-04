@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profil;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth as auth;
 
 class ProfilController extends Controller
 {
@@ -57,7 +59,11 @@ class ProfilController extends Controller
      */
     public function edit(Profil $profil)
     {
-        //
+        return view('dashboard.profil.edit', [
+            'profil' => User::findOrFail(auth::id()),
+            // 'profil' => Profil::findOrFail(),
+            'title' => "Profil"
+        ]);
     }
 
     /**

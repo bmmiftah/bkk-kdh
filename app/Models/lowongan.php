@@ -13,6 +13,15 @@ class Lowongan extends Model
     use HasFactory, SoftDeletes, Sluggable;
 
     protected $guarded = ['id'];
+    protected $with=['perusahaan'];
+
+    public function scopeFilter($query, array $filters)
+    {
+        
+        $query->when($filters['search'] ?? false, function($query, $search) {
+            return $query->where('title_lowongan', 'like', '%' . $search . '%');
+        });
+    }
 
     public function perusahaan()
     {

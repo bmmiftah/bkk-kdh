@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Carousel;
+use App\Models\Category;
 use App\Models\Informasi;
 use Illuminate\Http\Request;
 
@@ -14,14 +14,15 @@ class InformasiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-
-        
+    {        
+        if(request('category')){
+            Category::firstWhere('slug', request('category'));
+        }
 
         return view('informasi',[
             "title" => "Pusat Informasi",
-            "informasis" => Informasi::all(),
-            "carousells" => Carousel::all()
+            "categories" => Category::all(),
+            "informasis" => Informasi::latest()->filter(request(        ['search', 'category']))->paginate(3)->withQueryString()
         ]);
     }
 

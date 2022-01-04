@@ -60,12 +60,16 @@
         
             <!-- Three columns of text below the carousel -->
             <div class="row d-flex align-item-center">
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle mb-3 mx-auto d-block" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h5 class="text-center">M. Naufal Abidin, S.pd</h5>
-                <p class="text-center">Ketua</p>
+              @foreach ($pengurus as $penguruses )
+              
+              <div class="col-lg-3">
+                <img src="/{{ $penguruses->img_pengurus }}" alt="" class="bd-placeholder-img rounded-circle mb-3 mx-auto d-block" width="140" height="140">
+                {{-- <svg class="bd-placeholder-img rounded-circle mb-3 mx-auto d-block" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> --}}
+                <h5 class="text-center">{{ $penguruses->nama }}</h5>
+                <p class="text-center">{{ $penguruses->jabatan }}</p>
               </div>
-            </div><!-- /.row --> 
+              @endforeach
+            </div><!-- /.row -->
         </div>
         
     </div>

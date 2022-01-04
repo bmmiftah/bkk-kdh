@@ -13,10 +13,13 @@
                         <div class="header-informasi">
 
                             <h1 class="section-heading text-center">{{ $detail_informasi->title_informasi }}</h1>
+                            <small class="text-secondary">{{ $detail_informasi->created_at->diffforhumans() }}</small>
+                            <br>
+                            <small class="text-secondary">{{ $detail_informasi->category->title_category }}</small>
 
                         </div>
                         
-                        <br> <hr> <br>
+                        <hr> <br>
 
                         <div class="body-informasi">
 

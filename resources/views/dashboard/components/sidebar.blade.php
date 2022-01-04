@@ -13,8 +13,8 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href='/dashboard'>
+    <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }} ">
+        <a class="nav-link " href='/dashboard'>
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -48,7 +48,7 @@
  </li> --}}
 
  <!-- admin access - pengurus Collapse Menu -->
- <li class="nav-item">
+ <li class="nav-item {{ Request::is('dashboard/pengurus*') ? 'active' : '' }}">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePengurus"
         aria-expanded="true" aria-controls="collapsePengurus">
         <i class="fas fa-fw fa-users"></i>
@@ -76,7 +76,7 @@
     </div>
 
     <!-- Admin access - informasi collapse menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('dashboard/informasi*') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInformasi"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-info"></i>
@@ -97,7 +97,7 @@
     </li>
 
     <!-- admin access - Lowongan Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('dashboard/lowongan*') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLowongan"
             aria-expanded="true" aria-controls="collapseLowongan">
             <i class="fas fa-fw fa-briefcase"></i>
@@ -117,7 +117,7 @@
     </li>
 
     <!-- admin access - Pendaftaran Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('dashboard/pendaftaran*') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePendaftaran"
             aria-expanded="true" aria-controls="collapsePendaftaran">
             <i class="fas fa-fw fa-clipboard"></i>
@@ -145,7 +145,7 @@
     </div>
 
     <!-- super admin access - perusahaan Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('dashboard/perusahaan*') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePerusahaan"
             aria-expanded="true" aria-controls="collapsePerusahaan">
             <i class="fas fa-fw fa-flag"></i>
@@ -165,7 +165,7 @@
     </li>
 
     <!-- super admin access - Users Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('dashboard/users*') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
             aria-expanded="true" aria-controls="collapseUsers">
             <i class="fas fa-fw fa-users"></i>

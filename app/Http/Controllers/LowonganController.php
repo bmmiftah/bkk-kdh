@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\lowongan;
+use App\Models\Perusahaan;
 use Illuminate\Http\Request;
 
 class LowonganController extends Controller
@@ -17,8 +18,9 @@ class LowonganController extends Controller
        return view('lowongan', [
 
         "title" => "Semua Lowongan",
+        "perusahaans" =>Perusahaan::all(),
         // "lowongans" => Lowongan::latest()->paginate(4)->withQueryString()
-        "lowongans" => Lowongan::all()
+        "lowongans" => Lowongan::latest()->filter(request(['search']))->paginate(3)->withQueryString()
        ]);
 
       

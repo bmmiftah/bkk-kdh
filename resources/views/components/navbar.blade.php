@@ -12,7 +12,7 @@ style="font-family: Poppins, sans-serif">
         <a class="nav-link px-md-4 {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link px-md-4 {{ Request::is('about') ? 'active' : '' }}" href="/about">Tentang</a>
+        <a class="nav-link px-md-4 {{ Request::is('tentang') ? 'active' : '' }}" href="/tentang">Tentang</a>
       </li>
       <li class="nav-item">
         <a class="nav-link px-md-4 {{ Request::is('lowongan') ? 'active' : '' }}"  href="/lowongan">Lowongan</a>
