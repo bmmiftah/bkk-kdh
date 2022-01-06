@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon">
             <img src="/img/logo-header.png" alt="">
         </div>
-        <div class="sidebar-brand-text mx-2">My Profil</div>
+        <div class="sidebar-brand-text mx-2">My Profile</div>
     </a>
 
     <!-- Divider -->
@@ -14,14 +14,14 @@
 
     <!-- Profil-->
     <li class="nav-item">
-        <a class="nav-link" href="/profil/personal">
+        <a class="nav-link" href="/profil/{{ $user->id }}/edit">
         <i class="fas fa-fw fa-user"></i>
         <span>Profil</span></a>
     </li>
 
     <!-- Vaksin-->
     <li class="nav-item">
-        <a class="nav-link" href="/profil/vaksin">
+        <a class="nav-link" href="/vaksin/{{ $user->id }}/edit">
         <i class="fas fa-fw fa-paperclip"></i>
         <span>Vaksin</span></a>
     </li>

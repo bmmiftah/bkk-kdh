@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardPengurusController;
 use App\Http\Controllers\DashboardPerusahaanController;
 use App\Http\Controllers\DashboardProfilController;
 use App\Http\Controllers\DashboardUsersController;
+use App\Http\Controllers\DataVaksinControler;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
@@ -82,22 +83,24 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 // register
-
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-// dashboard_admin
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+// profil
 
 // dashboard_profil
 Route::resource('/profil', DashboardProfilController::class)->middleware('auth');
-// Route::get('/profil/personal', [DashboardProfilController::class, 'edit'])->middleware('auth');
-// Route::get('/dashboard', function() {
-//     return view('dashboard.index');
-// })->middleware('auth');
 
-// Dashboard Informasi
-// slug
+// vaksin
+Route::resource('/vaksin', DataVaksinControler::class)->middleware('auth');
+
+// admin access
+
+// dashboard_admin
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('superAdmin');
+
+    // Dashboard Informasi
+    // slug
 Route::get('/dashboard/informasi/checkSlug', [DashboardInformasiController::class, 'checkSlug'])->middleware('auth');
 
 Route::resource('/dashboard/informasi', DashboardInformasiController::class)->middleware('auth');
@@ -107,6 +110,15 @@ Route::get('/dashboard/lowongan/checkSlug', [DashboardLowonganController::class,
 
 Route::resource('/dashboard/lowongan', DashboardLowonganController::class)->middleware('auth');
 
+// Dashboard Carousell
+
+Route::resource('/dashboard/carousell', DashboardCarouselController::class)->middleware('auth');
+
+// Dashboard Pengurus
+
+Route::resource('/dashboard/pengurus', DashboardPengurusController::class)->middleware('auth');
+
+// super admin accsess
 // Dashboard Perusahaan
 Route::get('/dashboard/perusahaan/checkSlug', [DashboardPerusahaanController::class, 'checkSlug'])->middleware('auth');
 
@@ -115,11 +127,3 @@ Route::resource('/dashboard/perusahaan', DashboardPerusahaanController::class)->
 // Dashboard Users
 
 Route::resource('/dashboard/users', DashboardUsersController::class)->middleware('auth');
-
-// Dashboard Carousell
-
-Route::resource('/dashboard/carousell', DashboardCarouselController::class)->middleware('auth');
-
-// Dashboard Carousell
-
-Route::resource('/dashboard/pengurus', DashboardPengurusController::class)->middleware('auth');

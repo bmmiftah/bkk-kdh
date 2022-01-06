@@ -10,6 +10,8 @@ use App\Models\Informasi;
 use App\Models\Perusahaan;
 use Illuminate\Database\Seeder;
 use App\Http\Controllers\InformasiController;
+use App\Models\Jenis_kelamin;
+use App\Models\Vaksin;
 
 class DatabaseSeeder extends Seeder
 {
@@ -47,6 +49,18 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345'),
         ]);
 
+         // jenis kelamin
+
+         Jenis_kelamin::create([
+            'jenis_kelamin' => 'Laki-Laki',
+            'slug' => 'laki-laki'
+        ]);
+
+        Jenis_kelamin::create([
+            'jenis_kelamin' => 'perempuan',
+            'slug' => 'perempuan'
+        ]);
+
 
         // Role Seeders
         
@@ -65,6 +79,52 @@ class DatabaseSeeder extends Seeder
             'slug' => 'super-admin'
         ]);
 
+         // vaksin Seeders
+        
+        Vaksin::create([
+            'jenis_vaksin' => 'Sinovac',
+            'slug' => 'sinovac'
+        ]);
+        
+       Vaksin::create([
+            'jenis_vaksin' => 'AstraZeneca',
+            'slug' => 'astrazeneca'
+        ]);
+
+       Vaksin::create([
+            'jenis_vaksin' => 'Sinophram',
+            'slug' => 'sinophram'
+        ]);
+
+       Vaksin::create([
+            'jenis_vaksin' => 'Moderna',
+            'slug' => 'moderna'
+        ]);
+        
+       Vaksin::create([
+            'jenis_vaksin' => 'Novavax',
+            'slug' => 'novavax'
+        ]);
+
+       Vaksin::create([
+            'jenis_vaksin' => 'Sputnik-V',
+            'slug' => 'sputnik-v'
+        ]);
+
+       Vaksin::create([
+            'jenis_vaksin' => 'Janssen',
+            'slug' => 'janssen'
+        ]);
+
+       Vaksin::create([
+            'jenis_vaksin' => 'Convidencia',
+            'slug' => 'convidencia'
+        ]);
+
+       Vaksin::create([
+            'jenis_vaksin' => 'Zifivax',
+            'slug' => 'zifivax'
+        ]);
 
         // Category Seeders
 

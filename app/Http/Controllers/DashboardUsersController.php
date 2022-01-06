@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+
 class DashboardUsersController extends Controller
 {
     /**
@@ -47,7 +48,8 @@ class DashboardUsersController extends Controller
             'username' => ['required', 'min:6', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255',
-            'role_id' => 'required'
+            'role_id' => 'required',
+           
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
@@ -95,7 +97,8 @@ class DashboardUsersController extends Controller
     public function update(Request $request, User $user)
     {
         $rules = [
-            'role_id' => 'required'
+            'role_id' => 'required',
+           
         ];
 
         $validatedData = $request->validate($rules);
@@ -103,6 +106,8 @@ class DashboardUsersController extends Controller
         $validatedData['role_id'] = $request->role_id;
 
         User::where('id', $user->id)->update($validatedData);
+
+        
 
         return redirect('/dashboard/users')->with('success', 'User telah terupdate!');
     }

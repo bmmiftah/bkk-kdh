@@ -15,17 +15,9 @@ class CreateVaksinsTable extends Migration
     {
         Schema::create('vaksins', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('jenis_vaksin_1');
-            $table->date('tgl_vaksin_1');
-            $table->string('kota_vaksin_1');
-            $table->string('img_bukti_1');
-            $table->string('jenis_vaksin_2');
-            $table->date('tgl_vaksin_2');
-            $table->string('kota_vaksin_2');
-            $table->string('img_bukti_2');
+            $table->string('jenis_vaksin');
+            $table->string('slug');
             $table->timestamps();
-            $table->softDeletes()->nullable();
         });
     }
 

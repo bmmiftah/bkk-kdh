@@ -1,67 +1,149 @@
 @extends('dashboardProfil.layouts.main')
 
+@section('container')
 <div class="justify-content-center">
 
-    <!-- Basic Card Example -->
+  
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Profil Saya</h6>
         </div>
         <div class="card-body mx-10">
-            <form method="post" action="/dashboardProfil/personal/{{ $profil->user_id }}" class="mb-5" enctype="multipart/form-data">
+            <form method="post" action="/profil/{{ $user->id }}" class="mb-5" enctype="multipart/form-data">
                 @method('put')
                 @csrf
+                
                 <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" autofocus required readonly value="{{ old('name', $user->name) }}">
+                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required value="{{ old('name', $user->name) }}">
                   @error('name')
-                    <div class="invalid-feedback">
-                      {{ $message }}
-                    </div>
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
                   @enderror
                 </div>
+                
+                <div class="row item-center">
 
-                <div class="mb-3">
-                  <label for="username" class="form-label">Username</label>
-                  <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" autofocus required readonly value="{{ old('username', $user->username) }}">
-                  @error('username')
-                    <div class="invalid-feedback">
-                      {{ $message }}
-                    </div>
-                  @enderror
-                </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="nik" class="form-label">Nomor Induk Kependudukan (NIK)</label>
+                    <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" required value="{{ old('nik', $user->nik) }}">
+                    @error('nik')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                    @enderror
+                  </div>
 
-                <div class="mb-3">
-                  <label for="email" class="form-label">email</label>
-                  <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" autofocus required readonly value="{{ old('email', $user->email) }}">
-                  @error('email')
-                    <div class="invalid-feedback">
-                      {{ $message }}
-                    </div>
-                  @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="role" class="form-label">Role Pengguna</label>
+                  <div class="col-md-6 mb-3">
+                    <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                     <br>
-                    <select class="form-control" name="role_id" id="role">
-                      @foreach ($roles as $role )
-                       @if (old('role_id', $user->role_id) == $role->id)
-                          <option value="{{ $role->id }}" selected>{{ $role->title_role }}</option>
+                    <select class="form-control" name="jenis_kelamin_id">
+                        <option value="" selected>--Pilih Jenis Kelamin--</option>
+                      @foreach ($jenis_kelamins as $jenis_kelamin )
+                       @if (old('jenis_kelamin_id', $user->jenis_kelamin_id) == $jenis_kelamin->id)
+                          <option value="{{ $jenis_kelamin->id }}" selected>{{ $jenis_kelamin->jenis_kelamin }}</option>
                        @else
-                          <option value="{{ $role->id }}">{{ $role->title_role }}</option>
+                          <option value="{{ $jenis_kelamin->id }}">{{ $jenis_kelamin->jenis_kelamin }}</option>
                         @endif
                       @endforeach
                     </select>
                   </div>
-        
-               
-                
-                <button type="submit" class="btn btn-primary">Update User</button>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
+                    <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" id="tempat_lahir" name="tempat_lahir" required value="{{ old('tempat_lahir', $user->tempat_lahir) }}">
+                    @error('tempat_lahir')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                    @enderror
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                    <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" id="tanggal_lahir" name="tanggal_lahir" required value="{{ old('tanggal_lahir', $user->tanggal_lahir) }}">
+                    @error('tanggal_lahir')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                    @enderror
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="sekolah" class="form-label">Asal Sekolah</label>
+                    <input type="text" class="form-control @error('sekolah') is-invalid @enderror" id="sekolah" name="sekolah" required value="{{ old('sekolah', $user->sekolah) }}">
+                    @error('sekolah')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                    @enderror
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="no_hp" class="form-label">Nomor Yang Dapat Dihubungi</label>
+                    <input type="text" class="form-control @error('no_hp') is-invalid @enderror" id="no_hp" name="no_hp" required value="{{ old('no_hp', $user->no_hp) }}">
+                    @error('no_hp')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                    @enderror
+                  </div>
+                  
+                </div>
+
+                <div class="mb-3">
+                  <label for="alamat" class="form-label">Alamat</label>
+                  <textarea rows="3" type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" required>{{ old('alamat', $user->alamat) }}</textarea>
+                  @error('alamat')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
+
+                <div class="mb-3">
+                  <label for="avatar" class="form-label @error('avatar') is-invalid @enderror">Foto Profil</label>
+                  <input type="hidden" name="oldImage" value="{{ $user->avatar }}">
+                  @if ($user->avatar)
+                  <img src="{{ asset('storage/' . $user->avatar) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                  @else
+                  <img class="img-preview img-fluid mb-3 col-sm-5">
+                  @endif
+                  <img class="img-preview img-fluid mb-3 col-sm-5">
+                  <input class="form-control" type="file" id="avatar" name="avatar" onchange="previewImage()">
+                  @error('avatar')
+                  <div class="invalid-feedback">
+                  {{ $message }}
+                  </div>
+                  @enderror
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Profil</button>
               </form>
         </div>
     </div>
 
 </div>
+
+
+<script>
+
+    function previewImage() {
+      const avatar = document.querySelector('#avatar');
+      const imgPreview = document.querySelector('.img-preview');
+
+      imgPreview.style.display = 'block';
+
+      const oFReader = new FileReader();
+      oFReader.readAsDataURL(avatar.files[0]);
+
+      oFReader.onload = function(oFREvent) {
+        imgPreview.src = oFREvent.target.result;
+      }
+    }
+
+</script>
+
 
 @endsection

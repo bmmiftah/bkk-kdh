@@ -2,6 +2,12 @@
 
 @section('container')
 
+@if (session()->has('success'))
+<div class="alert alert-success" role="alert">
+  {{ session('success') }}
+</div>
+@endif
+
 <div class="card shadow mb-4">
     <div class="card-body">
 

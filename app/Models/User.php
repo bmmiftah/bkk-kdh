@@ -25,25 +25,26 @@ class User extends Authenticatable
     // ];
 
     protected $guarded = ['id'];
+ 
 
     public function role()
     {
         return $this->belongsTo(Role::class);
     }
 
-    public function profils()
+    public function jenis_kelamin()
     {
-        return $this->hasOne(Profil::class);
-    }
-
-    public function vaksins()
-    {
-        return $this->hasOne(Vaksin::class);
+        return $this->belongsTo(Jenis_kelamin::class);
     }
 
     public function pendaftarans()
     {
         return $this->hasMany(Pendaftaran::class);
+    }
+
+    public function vaksin()
+    {
+        return $this->hasMany(Vaksin::class);
     }
 
     public function informasis()

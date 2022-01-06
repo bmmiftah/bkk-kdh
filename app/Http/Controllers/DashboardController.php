@@ -20,6 +20,12 @@ class DashboardController extends Controller
 
         $perusahaans = DB::table('perusahaans')->count();
 
+        
+
+        //  if (auth()->user()->username !== 'bmiftah') {
+        //      abort(403);
+        //  }
+
         return view('dashboard.index',[
             'users' => $users,
             'lowongans' => $lowongans,
