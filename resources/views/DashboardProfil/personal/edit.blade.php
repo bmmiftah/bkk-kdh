@@ -38,13 +38,13 @@
                   <div class="col-md-6 mb-3">
                     <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                     <br>
-                    <select class="form-control" name="jenis_kelamin_id">
+                    <select class="form-control" name="jenis_kelamin">
                         <option value="" selected>--Pilih Jenis Kelamin--</option>
                       @foreach ($jenis_kelamins as $jenis_kelamin )
-                       @if (old('jenis_kelamin_id', $user->jenis_kelamin_id) == $jenis_kelamin->id)
-                          <option value="{{ $jenis_kelamin->id }}" selected>{{ $jenis_kelamin->jenis_kelamin }}</option>
+                       @if (old('jenis_kelamin', $user->jenis_kelamin) == $jenis_kelamin->jenis_kelamin)
+                          <option value="{{ $jenis_kelamin->jenis_kelamin }}" selected>{{ $jenis_kelamin->jenis_kelamin }}</option>
                        @else
-                          <option value="{{ $jenis_kelamin->id }}">{{ $jenis_kelamin->jenis_kelamin }}</option>
+                          <option value="{{ $jenis_kelamin->jenis_kelamin }}">{{ $jenis_kelamin->jenis_kelamin }}</option>
                         @endif
                       @endforeach
                     </select>

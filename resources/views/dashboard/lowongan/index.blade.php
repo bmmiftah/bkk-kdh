@@ -33,9 +33,11 @@
                         <td>{{ $lowongan->perusahaan->nama_perusahaan}}</td>
                         <td>{{ $lowongan->tgl_tutup }}</td>
                         <td class="text-center">
-                            <a href="/dashboard/lowongan/{{ $lowongan->slug }}/edit" class="badge bg-warning"><i style="color: white" class="fas fa-edit fa-md fa-fw"></i></a>
+                           
 
-                            <a href="/dashboard/lowongan/{{ $lowongan->slug }}" class="badge bg-warning"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i></a>
+                            <a href="/detail_lowongan/{{ $lowongan->slug }}" class="badge bg-info" target="_blank"><i style="color: white" class="fas fa-eye fa-md fa-fw"></i></a>
+
+                            <a href="/dashboard/lowongan/{{ $lowongan->slug }}/edit" class="badge bg-warning"><i style="color: white" class="fas fa-edit fa-md fa-fw"></i></a>
 
                             <form action="/dashboard/lowongan/{{ $lowongan->slug }}" method="post" class="d-inline">
                             @method('delete')

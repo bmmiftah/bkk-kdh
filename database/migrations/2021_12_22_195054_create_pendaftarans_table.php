@@ -17,8 +17,14 @@ class CreatePendaftaransTable extends Migration
             $table->id();
             $table->foreignId('lowongan_id');
             $table->foreignId('user_id');
-            $table->integer('no_tes')->unique();
             $table->foreignId('profil_id');
+            $table->integer('no_tes')->unique();
+            $table->string('nama_lengkap');
+            $table->date('tanggal_lahir');
+            $table->string('nama_sekolah');
+            $table->string('no_hp');
+            $table->string('nik');
+            $table->string('email');
             $table->string('ukuran_baju');
             $table->string('ukuran_celana');
             $table->string('ukuran_sepatu');

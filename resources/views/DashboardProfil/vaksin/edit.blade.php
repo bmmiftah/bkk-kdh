@@ -22,10 +22,10 @@
                     <select class="form-control" name="jenis_vaksin_1">
                         <option value="" selected>--Pilih Jenis Vaksin Ke-1--</option>
                       @foreach ($vaksins as $vaksin )
-                       @if (old('jenis_vaksin_1', $user->jenis_vaksin_1) == $vaksin->id)
-                          <option value="{{ $vaksin->id }}" selected>{{ $vaksin->jenis_vaksin }}</option>
+                       @if (old('jenis_vaksin_1', $user->jenis_vaksin_1) == $vaksin->jenis_vaksin)
+                          <option value="{{ $vaksin->jenis_vaksin }}" selected>{{ $vaksin->jenis_vaksin }}</option>
                        @else
-                          <option value="{{ $vaksin->id }}">{{ $vaksin->jenis_vaksin }}</option>
+                          <option value="{{ $vaksin->jenis_vaksin }}">{{ $vaksin->jenis_vaksin }}</option>
                         @endif
                       @endforeach
                     </select>
@@ -80,10 +80,10 @@
                       <select class="form-control" name="jenis_vaksin_2">
                           <option value="" selected>--Pilih Jenis Vaksin Ke-2--</option>
                         @foreach ($vaksins as $vaksin )
-                        @if (old('jenis_vaksin_2', $user->jenis_vaksin_2) == $vaksin->id)
-                            <option value="{{ $vaksin->id }}" selected>{{ $vaksin->jenis_vaksin }}</option>
+                        @if (old('jenis_vaksin_2', $user->jenis_vaksin_2) == $vaksin->jenis_vaksin)
+                            <option value="{{ $vaksin->jenis_vaksin }}" selected>{{ $vaksin->jenis_vaksin }}</option>
                         @else
-                            <option value="{{ $vaksin->id }}">{{ $vaksin->jenis_vaksin }}</option>
+                            <option value="{{ $vaksin->jenis_vaksin }}">{{ $vaksin->jenis_vaksin }}</option>
                           @endif
                         @endforeach
                       </select>

@@ -4,7 +4,6 @@
 
 <div class="justify-content-center">
 
-    <!-- Basic Card Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i>Buat Lowongan Baru</h6>

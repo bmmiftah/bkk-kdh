@@ -93,7 +93,6 @@ class DashboardPengurusController extends Controller
         $rules = [
             'nama' => 'required|max:255',
             'jabatan' => 'required|max:255',
-            'img_pengurus' => 'required|file|max:1024'
         ];
 
         $validatedData = $request->validate($rules);
