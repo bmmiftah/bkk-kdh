@@ -58,11 +58,18 @@
     <div class="card-body">
       <h5 class="card-title">{{ $lowongan->title_lowongan }}</h5>
       <small> 
+
+        <i class="bi bi-calendar3"></i> <small></small>Batas Pendaftaran : {{ $lowongan->tgl_tutup }}
+        <br>
+
         @if ($lowongan->status == true )
-        <b class="text-primary">DIBUKA </b> <i class="bi bi-calendar3"></i> {{ $lowongan->tgl_tutup }}
+        <span class="badge bg-success d-inline text-light ml-3">DIBUKA</span>
         @else
-        <b class="text-danger">DITUTUP </b> <i class="bi bi-calendar3"></i> {{ $lowongan->tgl_tutup }}
+        <span class="badge bg-danger d-inline text-light">DITUTUP</span>
         @endif
+
+        <span class="badge bg-dark py-1 mx-1">{{ $lowongan->perusahaan->nama_perusahaan }}</span>
+
       </small>
       <br> <hr>
       <p class="card-text">{{ $lowongan->excerpt }}</p>
@@ -76,7 +83,7 @@
 @else
 <div class="card shadow-sm mt-3">
 
-  <p class="text-center fs-4 my-5">Lowongan Yang Dicari Tidak Bisa Ditemukan</p>
+  <p class="text-center text-secondary fs-4 my-5">Lowongan Yang Dicari Tidak Bisa Ditemukan</p>
   
 </div>
 @endif

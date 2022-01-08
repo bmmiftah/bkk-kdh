@@ -18,11 +18,6 @@ class Perusahaan extends Model
         return $this->hasMany(Lowongan::class);
     }
 
-    public function informasis()
-    {
-        return $this->hasMany(Informasi::class);
-    }
-
     public function sluggable(): array
     {
         return [

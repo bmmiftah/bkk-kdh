@@ -34,9 +34,9 @@
                 </div>
         
                 <div class="mb-3">
-                  <label for="category" class="form-control">Kategori Informasi</label>
+                  <label for="category" class="form-label">Kategori Informasi</label>
                   <br>
-                  <select class="form-select" name="category_id">
+                  <select class="form-control" name="category_id">
                     @foreach ($categories as $category )
                      @if (old('category_id', $informasi->category_id) == $category->id)
                         <option value="{{ $category->id }}" selected>{{ $category->title_category }}</option>
@@ -48,15 +48,15 @@
                 </div>
 
                 <div class="mb-3">
-                  <label for="perusahaan" class="form-label">Perusahaan</label>
+                  <label for="lowongan" class="form-label">Lowongan</label>
                   <br>
-                  <select class="form-control" name="perusahaan_id">
+                  <select class="form-control" name="lowongan_id">
                       <option value="" selected>Tanpa Perusahaan</option>
-                    @foreach ($perusahaans as $perusahaan )
-                     @if (old('perusahaan_id', $informasi->perusahaan_id) == $perusahaan->id)
-                        <option value="{{ $perusahaan->id }}" selected>{{ $perusahaan->nama_perusahaan }}</option>
+                    @foreach ($lowongans as $lowongan )
+                     @if (old('lowongan_id', $informasi->lowongan_id) == $lowongan->id)
+                        <option value="{{ $lowongan->id }}" selected>{{ $lowongan->title_lowongan }}</option>
                      @else
-                        <option value="{{ $perusahaan->id }}">{{ $perusahaan->nama_perusahaan }}</option>
+                        <option value="{{ $lowongan->id }}">{{ $lowongan->title_lowongan }}</option>
                       @endif
                     @endforeach
                   </select>

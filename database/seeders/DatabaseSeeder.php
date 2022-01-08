@@ -213,7 +213,7 @@ class DatabaseSeeder extends Seeder
 
        Informasi::create([
            'category_id' => 2,
-           'perusahaan_id' => 3,
+           'lowongan_id' => 3,
            'title_informasi' => 'Hasil Cek Berkas Lowongan ABC',
            'slug' => 'hasil-cek-berkas-lowongan-abc',
            'excerpt' => 'Pengumuman dari hasil cek berkas lowongan ABC',
@@ -222,7 +222,7 @@ class DatabaseSeeder extends Seeder
 
        Informasi::create([
            'category_id' => 5,
-           'perusahaan_id' => 2,
+           'lowongan_id' => 2,
            'title_informasi' => 'Hasil MCU Lowongan Dadada',
            'slug' => 'hasil-mcu-lowongan-dadada',
            'excerpt' => 'Pengumuman dari hasil MCU lowongan dadada',
@@ -231,7 +231,7 @@ class DatabaseSeeder extends Seeder
 
        Informasi::create([
            'category_id' => 1,
-           'perusahaan_id' => 3,
+           'lowongan_id' => 3,
            'title_informasi' => 'Selamat Natal dan Tahun Baru 2020',
            'slug' => 'selamat-natal-dan-taun-baru-2020',
            'excerpt' => 'Selamat Natal dan Tahun Baru 2020, Bagi yang merayakannya',
@@ -240,7 +240,7 @@ class DatabaseSeeder extends Seeder
 
        Informasi::create([
            'category_id' => 4,
-           'perusahaan_id' => 1,
+           'lowongan_id' => 1,
            'title_informasi' => 'Hasil Interview Lowongan HAHA ',
            'slug' => 'hasil-interview-lowongan-haha',
            'excerpt' => 'Pengumuman dari hasil interview lowongan haha',

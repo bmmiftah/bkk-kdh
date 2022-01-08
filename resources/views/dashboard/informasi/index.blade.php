@@ -20,7 +20,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Judul Informasi</th>
                         <th scope="col">Kategori</th>
-                        <th scope="col">Perusahaan</th>
+                        <th scope="col">Lowongan</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -31,10 +31,10 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $informasi->title_informasi }}</td>
                         <td>{{ $informasi->category->title_category }}</td>
-                        @if (!$informasi->perusahaan_id)
-                            <td>Tanpa Perusahaan</td>
+                        @if (!$informasi->lowongan_id)
+                            <td>Tanpa Lowongan</td>
                         @else
-                            <td>{{ $informasi->perusahaan->nama_perusahaan }}</td>
+                            <td>{{ $informasi->lowongan->title_lowongan }}</td>
                         @endif
                         <td class="text-center">
                             <a href="/dashboard/informasi/{{ $informasi->slug }}" class="badge bg-info"><i style="color: white" class="fas fa-eye fa-md fa-fw"></i></a>

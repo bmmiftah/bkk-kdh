@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Informasi;
-use App\Models\Perusahaan;
+use App\Models\Lowongan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -33,12 +33,12 @@ class DashboardInformasiController extends Controller
      */
     public function create()
     {
-        $perusahaan = Perusahaan::all();
+        $lowongan = Lowongan::all();
         $category = Category::all();
 
         return view('dashboard.informasi.create', [
             'categories' => $category,
-            'perusahaans' => $perusahaan,
+            'lowongans' => $lowongan,
             'title' => "Informasi"
         ]);
 
@@ -94,17 +94,17 @@ class DashboardInformasiController extends Controller
      */
     public function edit(Informasi $informasi)
     {
-        dd($informasi);
+        // dd($informasi);
 
         $category = Category::all();
-        $perusahaans = Perusahaan::all();
+        $lowongans = Lowongan::all();
 
 
         
         return view('dashboard.informasi.edit', [
             'informasi' => $informasi,
             'categories' => $category,
-            'perusahaans' => $perusahaans,
+            'lowongans' => $lowongans,
             'title' => "Informasi"
         ]);
     }
@@ -130,7 +130,7 @@ class DashboardInformasiController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        $validatedData['perusahaan_id'] = $request->perusahaan_id;
+        $validatedData['lowongan_id'] = $request->lowongan_id;
 
         $validatedData['excerpt'] = Str::limit(strip_tags($request->isi_informasi), 200);
 

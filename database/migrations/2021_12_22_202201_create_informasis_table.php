@@ -18,7 +18,7 @@ class CreateInformasisTable extends Migration
             $table->string('title_informasi');
             $table->string('slug')->unique();
             $table->foreignId('category_id');
-            $table->foreignId('perusahaan_id')->nullable();
+            $table->foreignId('lowongan_id')->nullable();
             $table->string('img_informasi')->nullable();
             $table->string('excerpt');
             $table->text('isi_informasi');

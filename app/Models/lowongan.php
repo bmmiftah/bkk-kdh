@@ -28,6 +28,11 @@ class Lowongan extends Model
         return $this->belongsTo(Perusahaan::class);
     }
 
+    public function informasis()
+    {
+        return $this->hasMany(Informasi::class);
+    }
+
     public function sluggable(): array
     {
         return [

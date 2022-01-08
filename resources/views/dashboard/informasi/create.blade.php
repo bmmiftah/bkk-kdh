@@ -47,15 +47,15 @@
                 </div>
 
                 <div class="mb-3">
-                  <label for="perusahaan" class="form-label">Perusahaan</label>
+                  <label for="lowongan" class="form-label">Lowongan</label>
                   <br>
-                  <select class="form-control" name="perusahaan_id">
-                      <option value="" selected>Tanpa Perusahaan</option>
-                    @foreach ($perusahaans as $perusahaan )
-                     @if (old('perusahaan_id') == $perusahaan->id)
-                        <option value="{{ $perusahaan->id }}" selected>{{ $perusahaan->nama_perusahaan }}</option>
+                  <select class="form-control" name="lowongan_id">
+                      <option value="" selected>Tanpa Lowongan</option>
+                    @foreach ($lowongans as $lowongan )
+                     @if (old('lowongan_id') == $lowongan->id)
+                        <option value="{{ $lowongan->id }}" selected>{{ $lowongan->title_lowongan }}</option>
                      @else
-                        <option value="{{ $perusahaan->id }}">{{ $perusahaan->nama_perusahaan }}</option>
+                        <option value="{{ $lowongan->id }}">{{ $lowongan->title_lowongan }}</option>
                       @endif
                     @endforeach
                   </select>

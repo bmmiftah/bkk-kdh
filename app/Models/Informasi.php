@@ -12,7 +12,7 @@ class Informasi extends Model
     use HasFactory, SoftDeletes, Sluggable;
 
     protected $guarded = ['id'];
-    protected $with=['category', 'perusahaan'];
+    protected $with=['category', 'lowongan'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -34,9 +34,9 @@ class Informasi extends Model
         return $this->belongsTo(Category::class);
     }
    
-    public function perusahaan()
+    public function lowongan()
     {
-        return $this->belongsTo(Perusahaan::class);
+        return $this->belongsTo(Lowongan::class);
     }
 
     public function user()
