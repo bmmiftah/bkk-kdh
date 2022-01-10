@@ -33,6 +33,11 @@ class Lowongan extends Model
         return $this->hasMany(Informasi::class);
     }
 
+    public function pendaftaran()
+    {
+        return $this->hasMany(pendaftaran::class);
+    }
+
     public function sluggable(): array
     {
         return [

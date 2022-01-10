@@ -12,9 +12,9 @@ class Pendaftaran extends Model
 
     protected $guarded = ['id'];
 
-    public function perusahaan()
+    public function lowongan()
     {
-        return $this->belongsTo(Perusahaan::class);
+        return $this->belongsTo(Lowongan::class);
     }
 
     public function user()

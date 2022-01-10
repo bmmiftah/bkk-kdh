@@ -1,5 +1,11 @@
 @extends('dashboardProfil.layouts.main')
 
+@if (session()->has('success'))
+<div class="alert alert-success" role="alert">
+  {{ session('success') }}
+</div>
+@endif
+
 @section('container')
 <div class="justify-content-center">
 

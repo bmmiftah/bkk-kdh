@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth as auth;
 
-class DataVaksinControler extends Controller
+class DataVaksinController extends Controller
 {
     /**
      * Display a listing of the resource.

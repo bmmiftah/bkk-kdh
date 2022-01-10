@@ -15,11 +15,12 @@ class CreatePendaftaransTable extends Migration
     {
         Schema::create('pendaftarans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('lowongan_id');
             $table->foreignId('user_id');
-            $table->foreignId('profil_id');
+            $table->string('lowongan_id')->default('');
             $table->integer('no_tes')->unique();
+            $table->string('foto_diri');
             $table->string('nama_lengkap');
+            $table->string('jenis_kelamin');
             $table->date('tanggal_lahir');
             $table->string('nama_sekolah');
             $table->string('no_hp');
@@ -36,6 +37,7 @@ class CreatePendaftaransTable extends Migration
             $table->date('tgl_vaksin_2');
             $table->string('kota_vaksin_2');
             $table->string('img_bukti_2');
+            $table->string('status')->default('verifikasi_data');
             $table->timestamps();
             $table->softDeletes()->nullable();
         });

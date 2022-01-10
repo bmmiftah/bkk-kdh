@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Jenis_kelamin::create([
-            'jenis_kelamin' => 'perempuan',
+            'jenis_kelamin' => 'Perempuan',
             'slug' => 'perempuan'
         ]);
 

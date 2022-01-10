@@ -6,7 +6,7 @@
   
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Data Vaksinasi</h6>
+            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-paperclip fa-sm fa-fw mr-2 text-gray-400"></i>Data Vaksinasi</h6>
         </div>
         <div class="card-body mx-10">
             <form method="post" action="/vaksin/{{ $user->id }}" class="mb-5" enctype="multipart/form-data">

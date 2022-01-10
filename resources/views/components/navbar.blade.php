@@ -26,11 +26,16 @@ style="font-family: Poppins, sans-serif">
       @auth
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="/profil" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-person-circle"></i> {{ auth()->user()->username }}
+          <i class="bi bi-person-circle m-2"></i> {{ auth()->user()->username }}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li><a class="dropdown-item" href="/profil"> <i class="bi bi-person-badge"></i> My Profil</a></li>
           <li><hr class="dropdown-divider"></li>
+        @can('superAdmin')
+        <li><a class="dropdown-item" href="/dashboard"> <i class="bi bi-speedometer2"></i> Dashboard</a></li>
+        <li><hr class="dropdown-divider"></li>
+        @endcan
+
           <li>
             <form action="/logout" method="post">
               @csrf

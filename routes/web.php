@@ -5,14 +5,17 @@ use App\Http\Controllers\DashboardCarouselController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardInformasiController;
 use App\Http\Controllers\DashboardLowonganController;
+use App\Http\Controllers\DashboardPendaftaranController;
 use App\Http\Controllers\DashboardPengurusController;
 use App\Http\Controllers\DashboardPerusahaanController;
 use App\Http\Controllers\DashboardProfilController;
 use App\Http\Controllers\DashboardUsersController;
 use App\Http\Controllers\DataVaksinControler;
+use App\Http\Controllers\DataVaksinController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
+use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\RegisterController;
 use App\Models\Pengurus;
 use Illuminate\Support\Facades\Route;
@@ -37,47 +40,22 @@ Route::get('/', function () {
     ]);
 });
 
+// about
 Route::get('/tentang', [AboutController::class, 'index']);
 
-// Route::get('/about', function () {
-
-//     return view('about', [
-//         "title" => "Tentang",
-//         "active" => 'about',
-//         // "pengurus" => Pengurus::all()
-//     ]);
-// });
-
+// lowongan
 Route::get('/lowongan',[LowonganController::class, 'index']);
 Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show'])->middleware('auth');
 
-// Route::get('/detail_lowongan', function () {
-//     return view('detail_lowongan', [
-//         "title" => "Detail Lowongan",
-//         "active" => 'lowongan'
-//     ]);
-// });
+// pendaftaran
+Route::resource('/pendaftaran',PendaftaranController::class)->middleware('auth');
 
 
 // halaman informasi dan detail informasi
 Route::get('/informasi',[InformasiController::class, 'index']);
 Route::get('/detail_informasi/{informasi:slug}',[InformasiController::class, 'show']);
 
-// Route::get('/detail_informasi', function () {
-//     return view('detail_informasi', [
-//         "title" => "Informasi",
-//         "active" => 'informasi'
-//     ]);
-// });
-
-//halaman lowongan dan detail lowongan
-// Route::get('lowongan/{slug_lowongan}', function($slug_lowongan) {
-//     return view('detail_lowongan');
-// });
-
-
-// login
-
+// login\
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -92,7 +70,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::resource('/profil', DashboardProfilController::class)->middleware('auth');
 
 // vaksin
-Route::resource('/vaksin', DataVaksinControler::class)->middleware('auth');
+Route::resource('/vaksin', DataVaksinController::class)->middleware('auth');
 
 // admin access
 
@@ -117,6 +95,10 @@ Route::resource('/dashboard/carousell', DashboardCarouselController::class)->mid
 // Dashboard Pengurus
 
 Route::resource('/dashboard/pengurus', DashboardPengurusController::class)->middleware('auth');
+
+// Dashboard Pendaftaran
+
+Route::resource('/dashboard/pendaftaran', DashboardPendaftaranController::class)->middleware('auth');
 
 // super admin accsess
 // Dashboard Perusahaan

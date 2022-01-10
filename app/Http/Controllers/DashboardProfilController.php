@@ -38,7 +38,7 @@ class DashboardProfilController extends Controller
     {
         $rules = [
             'name' => 'required|max:255',
-            'nik' => 'required|max:16',
+            'nik' => 'required|max:16|unique:users',
             'jenis_kelamin' => 'required',
             'tempat_lahir' => 'required|max:255',
             'tanggal_lahir' => 'required',

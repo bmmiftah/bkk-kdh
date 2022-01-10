@@ -149,7 +149,7 @@ class DashboardInformasiController extends Controller
     {
         Informasi::destroy($informasi->id);
 
-        return redirect('/dashboard/informasi')->with('success', 'Informasi telah dihapus!');
+        return redirect('/dashboard/informasi')->with('success', 'Data informasi telah dihapus!');
     }
 
 

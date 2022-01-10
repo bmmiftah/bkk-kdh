@@ -117,23 +117,10 @@
     </li>
 
     <!-- admin access - Pendaftaran Collapse Menu -->
-    <li class="nav-item {{ Request::is('dashboard/pendaftaran*') ? 'active' : '' }}">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePendaftaran"
-            aria-expanded="true" aria-controls="collapsePendaftaran">
+    <li class="nav-item {{ Request::is('pendaftaran') ? 'active' : '' }} ">
+        <a class="nav-link " href='/dashboard/pendaftaran'>
             <i class="fas fa-fw fa-clipboard"></i>
-            <span>Pendaftaran</span>
-        </a>
-        <div id="collapsePendaftaran" class="collapse" aria-labelledby="headingPendaftaran"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Atur Pendaftaran:</h6>
-               {{-- tambah data informasi --}}
-               <a class="collapse-item" href="/dashboard/informasi/create"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i> Tambah Data</a>
-
-               {{-- lihat tabel data informasi --}}
-               <a class="collapse-item" href="/dashboard/informasi"><i class="fas fa-table fa-sm fa-fw mr-2 text-gray-400"></i> Tabel Data</a>
-            </div>
-        </div>
+            <span>Pendaftaran</span></a>
     </li>
 
     <!-- Divider -->
