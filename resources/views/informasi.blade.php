@@ -83,7 +83,7 @@
     <a style="text-decoration: none;" href="/detail_informasi/{{ $informasi->slug }}"><h4 class="card-title">{!! $informasi->title_informasi !!}</h4></a>
     <small>
       <span class="badge bg-success text-light">{{ $informasi->Category->title_category }}</span>
-      <span class="badge bg-dark text-light">{{ $informasi->lowongan->title_lowongan }}</span>
+      {{-- <span class="badge bg-dark text-light">{{ $informasi->lowongan->title_lowongan }}</span> --}}
     </small>
     <hr>
     <p class="card-text">{!! $informasi->excerpt !!}</p>

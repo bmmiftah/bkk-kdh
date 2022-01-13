@@ -59,7 +59,7 @@
                 <h6>Status Pendaftaran <span class="badge bg-success">Dibuka</span></h6>
                 <p class="inline-text"><i class="bi bi-calendar2-date-fill"></i> Batas Pendaftaran : {{ $detail_lowongan->tgl_tutup }}</p>
                 <br>
-                <a href="/pendaftaran/create" class="btn btn-primary" type="button"><i class="bi bi-briefcase-fill"></i> Daftar Lowongan</a>
+                <a href="/pendaftaran/create/{{ $detail_lowongan->slug }}" class="btn btn-primary" type="button"><i class="bi bi-briefcase-fill"></i> Daftar Lowongan</a>
               </div>
 
         </div>

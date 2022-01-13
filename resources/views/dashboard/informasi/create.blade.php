@@ -46,7 +46,7 @@
                   </select>
                 </div>
 
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                   <label for="lowongan" class="form-label">Lowongan</label>
                   <br>
                   <select class="form-control" name="lowongan_id">
@@ -59,7 +59,7 @@
                       @endif
                     @endforeach
                   </select>
-                </div>
+                </div> --}}
         
                 {{-- <div class="mb-3">
                   <label for="image" class="form-label @error('image') is-invalid @enderror">Post Image</label>

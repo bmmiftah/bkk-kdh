@@ -23,13 +23,13 @@
     <li class="nav-item">
         <a class="nav-link" href="/vaksin/{{ $user->id }}/edit">
         <i class="fas fa-fw fa-paperclip"></i>
-        <span>Vaksin</span></a>
+        <span>Data Vaksin</span></a>
     </li>
     <!-- Pendaftaran-->
     <li class="nav-item">
-        <a class="nav-link" href="/profil/pendaftarn">
-        <i class="fas fa-fw fa-clipboard"></i>
-        <span>Pendaftaran</span></a>
+        <a class="nav-link" href="/status/{{ $user->id }}">
+        <i class="fas fa-fw fa-clock"></i>
+        <span>Status Pendaftaran</span></a>
     </li>
 
     <!-- Divider -->

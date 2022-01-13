@@ -23,7 +23,6 @@ class DashboardPendaftaranController extends Controller
         return view('dashboard.pendaftaran.index', [
            'pendaftarans' => Pendaftaran::all(),
             'title' => "Pendaftaran cok",
-            'update' => "Pendaftaran cok",
         ]);
     }
 
@@ -56,7 +55,16 @@ class DashboardPendaftaranController extends Controller
      */
     public function show(Pendaftaran $pendaftaran)
     {
-        //
+        $lowongans = Lowongan::all();
+        $vaksin = Vaksin::all();
+        
+        return view('dashboard.pendaftaran.show', [
+            'pendaftaran' => $pendaftaran,
+            'title' => "Pendaftaran",
+            'user' => User::findOrFail(auth::id()),
+            'lowongan' => $lowongans,
+            'vaksins' => $vaksin,
+        ]);
     }
 
     /**
@@ -89,14 +97,14 @@ class DashboardPendaftaranController extends Controller
     public function update(Request $request, Pendaftaran $pendaftaran)
     {
         // dd($pendaftaran->status);
-        if ($pendaftaran->status === 'verifikasi_data') {
-           $validatedData['status'] = 'psikotes';
-        }elseif ($pendaftaran->status === 'psikotes') {
-            $validatedData['status'] = 'wawancara';
-        }elseif ($pendaftaran->status === 'wawancara') {
-            $validatedData['status'] = 'mcu';
-        }elseif ($pendaftaran->status === 'mcu') {
-            $validatedData['status'] = 'diterima';
+        if ($pendaftaran->status === 'Verifikasi Data') {
+           $validatedData['status'] = 'Lolos Tahap Psikotes';
+        }elseif ($pendaftaran->status === 'Lolos Tahap Psikotes') {
+            $validatedData['status'] = 'Lolos Tahap Wawancara';
+        }elseif ($pendaftaran->status === 'Lolos Tahap Wawancara') {
+            $validatedData['status'] = 'Lolos Tahap MCU';
+        }elseif ($pendaftaran->status === 'Lolos Tahap MCU') {
+            $validatedData['status'] = 'Diterima';
         }
 
 

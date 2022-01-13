@@ -20,7 +20,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Judul Informasi</th>
                         <th scope="col">Kategori</th>
-                        <th scope="col">Lowongan</th>
+                        {{-- <th scope="col">Lowongan</th> --}}
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -31,20 +31,20 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $informasi->title_informasi }}</td>
                         <td>{{ $informasi->category->title_category }}</td>
-                        @if (!$informasi->lowongan_id)
+                        {{-- @if (!$informasi->lowongan_id)
                             <td>Tanpa Lowongan</td>
                         @else
                             <td>{{ $informasi->lowongan->title_lowongan }}</td>
-                        @endif
-                        <td class="text-center">
-                            <a href="/dashboard/informasi/{{ $informasi->slug }}" class="badge bg-info"><i style="color: white" class="fas fa-eye fa-md fa-fw"></i></a>
+                        @endif --}}
+                        <td class="text-right">
+                            <a href="/dashboard/informasi/{{ $informasi->slug }}" class="badge bg-info text-light"><i style="color: white" class="fas fa-eye fa-md fa-fw"></i>Lihat</a>
 
-                            <a href="/dashboard/informasi/{{ $informasi->slug }}/edit" class="badge bg-warning"><i style="color: white" class="fas fa-edit fa-md fa-fw"></i></a>
+                            <a href="/dashboard/informasi/{{ $informasi->slug }}/edit" class="badge bg-warning text-light"><i style="color: white" class="fas fa-edit fa-md fa-fw"></i>Edit</a>
 
                             <form action="/dashboard/informasi/{{ $informasi->slug }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
-                            <button class="badge bg-danger border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i></button>
+                            <button class="badge bg-danger border-0 text-light" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i>Hapus</button>
                             </form>
                         </td>
                     </tr>

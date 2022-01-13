@@ -32,13 +32,13 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->username}}</td>
                         <td>{{ $user->role->title_role }}</td>
-                        <td class="text-center">
-                            <a href="/dashboard/users/{{ $user->username }}/edit" class="badge bg-warning"><i style="color: white" class="fas fa-edit fa-md fa-fw"></i></a>
+                        <td class="text-right">
+                            <a href="/dashboard/users/{{ $user->username }}/edit" class="badge bg-warning text-light"><i style="color: white" class="fas fa-edit fa-md fa-fw"></i>Edit</a>
 
                             <form action="/dashboard/users/{{ $user->username }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
-                            <button class="badge bg-danger border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i></button>
+                            <button class="badge bg-danger border-0 text-light" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i>Hapus</button>
                             </form>
                         </td>
                     </tr>

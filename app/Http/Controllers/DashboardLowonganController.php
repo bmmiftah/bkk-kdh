@@ -48,6 +48,8 @@ class DashboardLowonganController extends Controller
      */
     public function store(Request $request)
     {
+
+        
         $validateData = $request->validate([
             'title_lowongan' => 'required|max:255',
             'slug' => 'required|unique:lowongans',
@@ -55,11 +57,14 @@ class DashboardLowonganController extends Controller
             'tgl_buka' => 'required',
             'tgl_tutup' => 'required',
             'detail_lowongan' => 'required',
-            'kriteria_lowongan' => 'required'
+            'kriteria_lowongan' => 'required',
+            
         ]);
-
+        
         $validateData['excerpt'] = Str::limit(strip_tags($request->detail_lowongan), 200);
-
+        $validateData['informasi_tambahan'] = $request->informasi_tambahan;
+        // dd($validateData);
+        
         Lowongan::create($validateData);
 
         return redirect('/dashboard/lowongan')->with('success', 'Lowongan baru telah dibuat!');

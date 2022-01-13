@@ -11,7 +11,6 @@
         </div>
         <div class="card-body mx-10">
             <form method="post" action="/dashboard/pendaftaran/{{ $pendaftaran->id }}" class="mb-5" enctype="multipart/form-data">
-                @method('put') 
                 @csrf
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
                 <input type="hidden" name="id" value="{{ $pendaftaran->id }}">
@@ -249,22 +248,18 @@
                   @enderror
                 </div>
 
-                <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
-                    <br>
-                    <select class="form-control" name="status" required>
-                        <option value="Proses" {{ $pendaftaran->status == 'Proses' ? 'selected' : '' }}>Proses</option>
-                        <option value="M"{{ $pendaftaran->status == 'M' ? 'selected' : '' }}>M</option>
-                        <option value="L"{{ $pendaftaran->status == 'L' ? 'selected' : '' }}>L</option>
-                        <option value="XL"{{ $pendaftaran->status == 'XL' ? 'selected' : '' }}>XL</option>
-                        <option value="XXL"{{ $pendaftaran->status == 'XXL' ? 'selected' : '' }}>XXL</option>
-                        <option value="XXXL"{{ $pendaftaran->status == 'XXXL' ? 'selected' : '' }}>XXXL</option>
-                    </select>
-                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="status" class="form-label">Status Pendaftaran</label>
+                  <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status" required readonly value="{{ old('status', $pendaftaran->status) }}">
+                  @error('status')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
 
                
-                
-                <button type="submit" class="btn btn-primary">Update Pendaftaran</button>
+              
               </form>
         </div>
     </div>

@@ -2,29 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\lowongan;
-use App\Models\Perusahaan;
+use App\Models\Pendaftaran;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth as auth;
 
-class LowonganController extends Controller
+class StatusController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-       return view('lowongan', [
-
-        "title" => "Semua Lowongan",
-        "perusahaans" =>Perusahaan::all(),
-        // "lowongans" => Lowongan::latest()->paginate(4)->withQueryString()
-        "lowongans" => Lowongan::latest()->filter(request(['search']))->paginate(3)->withQueryString()
-       ]);
-
-      
+        //
     }
 
     /**
@@ -51,24 +43,33 @@ class LowonganController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\lowongan  $lowongan
+     * @param  \App\Models\Pendaftaran  $pendaftaran
      * @return \Illuminate\Http\Response
      */
-    public function show(lowongan $lowongan)
+    public function show(Pendaftaran $pendaftaran)
     {
-        return view('detail_lowongan', [
-            "title" => 'Detail Lowongan',
-            "detail_lowongan" => $lowongan 
+        // dd(Pendaftaran::findOrFail(auth::id()));
+
+        $profil = User::findOrFail(auth::id());
+        // $pendaftaran = Pendaftaran::findOrFail(auth::id());
+        $pendaftaran = Pendaftaran::where('user_id',auth::id())->latest()->get();
+
+        // dd($pendaftaran);
+
+        return view('dashboardProfil.status.show', [
+            'user' => $profil,
+            'pendaftaran' => $pendaftaran,
+            'title' => "Status Pendaftaran Saya"
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\lowongan  $lowongan
+     * @param  \App\Models\Pendaftaran  $pendaftaran
      * @return \Illuminate\Http\Response
      */
-    public function edit(lowongan $lowongan)
+    public function edit(Pendaftaran $pendaftaran)
     {
         //
     }
@@ -77,10 +78,10 @@ class LowonganController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\lowongan  $lowongan
+     * @param  \App\Models\Pendaftaran  $pendaftaran
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, lowongan $lowongan)
+    public function update(Request $request, Pendaftaran $pendaftaran)
     {
         //
     }
@@ -88,12 +89,11 @@ class LowonganController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\lowongan  $lowongan
+     * @param  \App\Models\Pendaftaran  $pendaftaran
      * @return \Illuminate\Http\Response
      */
-    public function destroy(lowongan $lowongan)
+    public function destroy(Pendaftaran $pendaftaran)
     {
         //
     }
 }
-

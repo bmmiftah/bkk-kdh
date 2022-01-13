@@ -11,6 +11,7 @@ class Pendaftaran extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
+    protected $with=['perusahaan','user','lowongan'];
 
     public function lowongan()
     {

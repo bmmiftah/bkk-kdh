@@ -17,7 +17,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\StatusController;
 use App\Models\Pengurus;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +32,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+// verifikasi email user
+// Auth::routes(['verify' => true]);
+
 
 // Route::get('/lowongan',[LowonganController::class, 'index']);
 
@@ -48,7 +55,8 @@ Route::get('/lowongan',[LowonganController::class, 'index']);
 Route::get('/detail_lowongan/{lowongan:slug}',[LowonganController::class, 'show'])->middleware('auth');
 
 // pendaftaran
-Route::resource('/pendaftaran',PendaftaranController::class)->middleware('auth');
+Route::resource('/pendaftaran',PendaftaranController::class)->middleware('auth')->except('create');
+Route::get('/pendaftaran/create/{slug}', [PendaftaranController::class, 'create']);
 
 
 // halaman informasi dan detail informasi
@@ -71,6 +79,9 @@ Route::resource('/profil', DashboardProfilController::class)->middleware('auth')
 
 // vaksin
 Route::resource('/vaksin', DataVaksinController::class)->middleware('auth');
+
+// status Pendaftaran
+Route::resource('/status', StatusController::class)->middleware('auth');
 
 // admin access
 

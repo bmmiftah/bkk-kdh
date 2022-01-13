@@ -37,7 +37,7 @@ class CreatePendaftaransTable extends Migration
             $table->date('tgl_vaksin_2');
             $table->string('kota_vaksin_2');
             $table->string('img_bukti_2');
-            $table->string('status')->default('verifikasi_data');
+            $table->string('status')->default('Verifikasi Data');
             $table->timestamps();
             $table->softDeletes()->nullable();
         });

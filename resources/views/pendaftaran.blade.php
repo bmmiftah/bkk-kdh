@@ -19,30 +19,32 @@
                 @csrf
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
                 <input type="hidden" name="no_tes" value="{{ $no_tes }}">
-                <div class="mb-3">
+
+                {{-- <div class="mb-3">
                   <label for="lowongan_id" class="form-label">Mendaftar Pada Lowongan</label>
                   <br>
-                  <select class="form-control" name="lowongan_id" required>
-                      <option value="" selected>--Pilih Lowongan--</option>
+                  <select class="form-control" name="lowongan_id" readonly srequired>
                     @foreach ($lowongan as $lowongan )
-                     @if (old('lowongan') == $lowongan->id)
-                        <option value="{{ $lowongan->id }}" selected>{{ $lowongan->title_lowongan }}</option>
+                     @if (old('lowongan') == $lowongan->title_lowongan)
+                        <option value="{{ $lowongan->id }}" readonly selected>{{ $lowongan->title_lowongan }}</option>
                      @else
-                        <option value="{{ $lowongan->id }}">{{ $lowongan->title_lowongan }}</option>
+                        <option readonly value="{{ $lowongan->id }}">{{ $lowongan->title_lowongan }}</option>
                       @endif
                     @endforeach
                   </select>
-                </div>
+                </div> --}}
 
-                {{-- <div class="mb-3">
-                  <label for="no_tes" class="form-label">Nomor Test</label>
-                  <input type="text" class="form-control @error('no_tes') is-invalid @enderror" id="no_tes" name="no_tes" autofocus required readonly value="{{ $no_tes }}">
-                  @error('no_tes')
+                <div class="mb-3">
+                  <label for="lowongan" class="form-label">Mendaftar Pada Lowongan</label>
+                  @foreach ($lowongans as $lowongan )
+                  <input type="text" class="form-control @error('lowongan') is-invalid @enderror" id="lowongan" name="lowongan" autofocus required readonly value="{{ old('lowongan', $lowongan->title_lowongan ) }}">
+                  @endforeach
+                  @error('lowongan')
                     <div class="invalid-feedback">
                       {{ $message }}
                     </div>
                   @enderror
-                </div> --}}
+                </div>
 
                 {{-- input data diri --}}
               <div class="row data-diri item-center">

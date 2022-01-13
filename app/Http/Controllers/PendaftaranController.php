@@ -32,20 +32,21 @@ class PendaftaranController extends Controller
         ]);
     }
 
-    public function create()
+    public function create($slug)
     {
         // $user = User::findOrFail(auth::id());
         // if (Pendaftaran::class) {
         //     # code...
         // }
 
-        $lowongans = Lowongan::all();
+        $lowongans = Lowongan::where('slug', $slug)->get();
+        // dd($lowongans);
         $vaksin = Vaksin::all();      
         
 
         return view('pendaftaran', [
             'user' => User::findOrFail(auth::id()),
-            'lowongan' => $lowongans,
+            'lowongans' => $lowongans,
             'vaksins' => $vaksin,
             'title' => "Pendaftaran",
             'no_tes' => mt_rand(10000000,99999999),

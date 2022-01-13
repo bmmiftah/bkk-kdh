@@ -36,7 +36,6 @@
                         <td>{{ $pendaftaran->status }}</td>
                         <td class="text-right">
 
-                            {{-- <a href="/dashboard/pendaftaran/{{ $pendaftaran->id }}/edit" class="badge bg-warning"><i style="color: white" class="fas fa-edit fa-md fa-fw"></i></a> --}}
                             @if ($pendaftaran->status != 'diterima')
                             <form action="/dashboard/pendaftaran/{{ $pendaftaran->id }}" method="post" class="d-inline">
                                 @method('put')
@@ -44,7 +43,9 @@
                                     <button class="badge bg-success text-light border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-check-circle fa-md fa-fw"></i> Update Status</button>
                                 </form>
                             @endif
-                        
+
+                            <a href="/dashboard/pendaftaran/{{ $pendaftaran->id }}" class="badge bg-info"><i style="color: white" class="fas fa-eye fa-md fa-fw"></i></a>
+
                             <form action="/dashboard/pendaftaran/{{ $pendaftaran->id }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
