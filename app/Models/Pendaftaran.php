@@ -18,6 +18,11 @@ class Pendaftaran extends Model
         return $this->belongsTo(Lowongan::class);
     }
 
+    public function perusahaan()
+    {
+        return $this->belongsTo(Perusahaan::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

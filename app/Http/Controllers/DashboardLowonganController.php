@@ -17,8 +17,10 @@ class DashboardLowonganController extends Controller
      */
     public function index()
     {
+        // dd(Lowongan::perusahaan());
         return view('dashboard.lowongan.index', [
             'lowongans' => Lowongan::all(),
+            // 'perusahaan' => Perusahaan::all(),
             'title' => "Lowongan"
         ]);
     }

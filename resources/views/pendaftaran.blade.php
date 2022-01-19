@@ -20,11 +20,11 @@
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
                 <input type="hidden" name="no_tes" value="{{ $no_tes }}">
 
-                {{-- <div class="mb-3">
+                <div class="mb-3">
                   <label for="lowongan_id" class="form-label">Mendaftar Pada Lowongan</label>
                   <br>
                   <select class="form-control" name="lowongan_id" readonly srequired>
-                    @foreach ($lowongan as $lowongan )
+                    @foreach ($lowongans as $lowongan )
                      @if (old('lowongan') == $lowongan->title_lowongan)
                         <option value="{{ $lowongan->id }}" readonly selected>{{ $lowongan->title_lowongan }}</option>
                      @else
@@ -32,19 +32,19 @@
                       @endif
                     @endforeach
                   </select>
-                </div> --}}
+                </div>
 
-                <div class="mb-3">
-                  <label for="lowongan" class="form-label">Mendaftar Pada Lowongan</label>
+                {{-- <div class="mb-3">
+                  <label for="lowongan_id" class="form-label">Mendaftar Pada Lowongan</label>
                   @foreach ($lowongans as $lowongan )
-                  <input type="text" class="form-control @error('lowongan') is-invalid @enderror" id="lowongan" name="lowongan" autofocus required readonly value="{{ old('lowongan', $lowongan->title_lowongan ) }}">
+                  <input type="text" class="form-control @error('lowongan') is-invalid @enderror" id="lowongan_id" name="lowongan_id" autofocus required readonly value="{{ old('lowongan_id', $lowongan->lowongan_id ) }}" placeholder="{{ $lowongan->title_lowongan }}">
                   @endforeach
                   @error('lowongan')
                     <div class="invalid-feedback">
                       {{ $message }}
                     </div>
                   @enderror
-                </div>
+                </div> --}}
 
                 {{-- input data diri --}}
               <div class="row data-diri item-center">

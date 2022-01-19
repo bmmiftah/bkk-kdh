@@ -13,9 +13,14 @@ class Perusahaan extends Model
 
     protected $guarded = ['id'];
 
-    public function lowongans()
+    public function lowongan()
     {
         return $this->hasMany(Lowongan::class);
+    }
+
+    public function Pendaftarans()
+    {
+        return $this->hasMany(Pendaftaran::class);
     }
 
     public function sluggable(): array

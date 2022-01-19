@@ -120,3 +120,7 @@ Route::resource('/dashboard/perusahaan', DashboardPerusahaanController::class)->
 // Dashboard Users
 
 Route::resource('/dashboard/users', DashboardUsersController::class)->middleware('auth');
+
+
+// kirim email
+Route::get('/kirim_email', [App\Http\Controllers\KirimEmailController::class, 'kirim']);
