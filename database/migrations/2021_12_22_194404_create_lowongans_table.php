@@ -24,7 +24,7 @@ class CreateLowongansTable extends Migration
             $table->text('informasi_tambahan')->nullable();
             $table->date('tgl_buka');
             $table->date('tgl_tutup');
-            $table->boolean('status')->default(true);
+            $table->boolean('status')->default(false);
             $table->timestamps();
             $table->softDeletes()->nullable();
         });

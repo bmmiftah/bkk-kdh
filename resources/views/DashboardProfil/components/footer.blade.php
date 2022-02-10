@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Bagus Miftah Nur Haqqi 2021</span>
+            <p style="margin: 0">Copyright © 2021-<?=date('Y')?> Bagus Miftah Nur Haqqi</p>
         </div>
     </div>
 </footer>

@@ -33,17 +33,33 @@
                         <td>{{ $lowongan->perusahaan->nama_perusahaan}}</td>
                         <td>{{ $lowongan->tgl_tutup }}</td>
                         <td class="text-right">
+
+                            @if ($lowongan->status !== 0)
+                                <form action="/ll/{{ $lowongan->id }}" method="post" class="d-inline">
+                                    @method('put')
+                                    @csrf
+                                        <button class="badge bg-danger text-light border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-minus-circle fa-md fa-fw"></i> Tutup Lowongan</button>
+                                </form>
+                            @endif
+
+                            @if ($lowongan->status !== 1)
+                                <form action="/ll/{{ $lowongan->id }}" method="post" class="d-inline">
+                                    @method('put')
+                                    @csrf
+                                        <button class="badge bg-success text-light border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-check-circle fa-md fa-fw"></i> Buka Lowongan</button>
+                                </form>
+                            @endif
                            
 
                             <a href="/detail_lowongan/{{ $lowongan->slug }}" class="badge bg-info text-light" target="_blank"><i style="color: white" class="fas fa-eye fa-md fa-fw"></i>Lihat</a>
 
                             <a href="/dashboard/lowongan/{{ $lowongan->slug }}/edit" class="badge bg-warning text-light"><i style="color: white" class="fas fa-edit fa-md fa-fw"></i>Edit</a>
 
-                            <form action="/dashboard/lowongan/{{ $lowongan->slug }}" method="post" class="d-inline">
+                            {{-- <form action="/dashboard/lowongan/{{ $lowongan->slug }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
                             <button class="badge bg-danger border-0 text-light" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i>Hapus</button>
-                            </form>
+                            </form> --}}
                         </td>
                     </tr>
                     @endforeach

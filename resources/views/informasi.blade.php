@@ -4,33 +4,7 @@
 
 <div class="container justify-content-center">
     <div class="info-header">
-        <h2 class=" mb-3 text-center py-3">Pusat Informasi</h2>
-
-        <div id="carouselExampleCaptions" class="carousel slide shadow-sm" data-bs-ride="carousel">
-          
-          
-          {{-- <div class="carousel-inner mb-4">
-            @foreach ($carousells as $carousell)
-              <div class="carousel-item active">
-                  <img src="/{{ $carousell->img_carousel }}" class="d-block w-100" alt="..." style="object-fit: cover; height: 400px;">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>{{ $carousell->title_carousel }}</h5>
-                  </div>
-              </div>
-            @endforeach
-            </div>
-            
-            
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>  --}}
-            
+        <h2 class=" mb-3 text-center py-3">Pusat Informasi</h2>   
     </div>
 
     <div class="row container main-lowongan m-0">
@@ -77,7 +51,7 @@
 
 @foreach ($informasis as $informasi )
 
-<div class=" px-0 card mb-3 shadow-sm item-fluid mt-lg-3">
+<div class=" px-0 card mb-3 shadow-sm item-fluid mt-lg-3" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-in-out">
   <img src="/img/img-info.jpg" class="card-img-top" style="height: 200px; object-fit:cover;" alt="...">
   <div class="card-body">
     <a style="text-decoration: none;" href="/detail_informasi/{{ $informasi->slug }}"><h4 class="card-title">{!! $informasi->title_informasi !!}</h4></a>

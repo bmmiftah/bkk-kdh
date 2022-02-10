@@ -189,9 +189,9 @@
 
                  <div class="mb-3">
                     <label for="img_bukti_1" class="form-label @error('img_bukti_1') is-invalid @enderror">Bukti Vaksinasi Ke-1</label>
-                    <input type="hidden" name="img_bukti_1" value="{{ $user->img_bukti_1 }}">
+                    <input type="hidden" name="img_bukti_1" value="{{ $pendaftaran->img_bukti_1 }}">
                     @if ($user->img_bukti_1)
-                    <img src="{{ asset('storage/' . $user->img_bukti_1) }}" id="img-preview-1" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                    <img src="{{ asset('storage/' . $pendaftaran->img_bukti_1) }}" id="img-preview-1" class="img-preview img-fluid mb-3 col-sm-5 d-block">
                     @endif
                     @error('img_bukti_1')
                     <div class="invalid-feedback">
@@ -237,9 +237,9 @@
 
               <div class="mb-3">
                   <label for="img_bukti_2" class="form-label @error('img_bukti_2') is-invalid @enderror">Bukti Vaksinasi Ke-2</label>
-                  <input type="hidden" name="img_bukti_2" value="{{ $user->img_bukti_2 }}">
+                  <input type="hidden" name="img_bukti_2" value="{{ $pendaftaran->img_bukti_2 }}">
                   @if ($user->img_bukti_2)
-                  <img src="{{ asset('storage/' . $user->img_bukti_2) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block" id="img-preview-2">
+                  <img src="{{ asset('storage/' . $pendaftaran->img_bukti_2) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block" id="img-preview-2">
                  @endif
                   @error('img_bukti_2')
                   <div class="invalid-feedback">

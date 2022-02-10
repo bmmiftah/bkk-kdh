@@ -22,7 +22,7 @@ class DashboardPendaftaranController extends Controller
         
         return view('dashboard.pendaftaran.index', [
            'pendaftarans' => Pendaftaran::all(),
-            'title' => "Pendaftaran cok",
+            'title' => "Pendaftaran",
         ]);
     }
 

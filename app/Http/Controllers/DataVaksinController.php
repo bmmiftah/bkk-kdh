@@ -70,7 +70,7 @@ class DataVaksinController extends Controller
         return view('dashboardProfil.vaksin.edit', [
             'user' => $profil,
             'vaksins' => $vaksin,
-            'title' => "Edit Data Vaksin"
+            'title' => "Edit Data Vaksinasi"
         ]);
     }
 

@@ -54,7 +54,7 @@
 @foreach ($lowongans as $lowongan )
 
 <div class="list-lowongan py-3">
-  <div class="card item-fluid">
+  <div class="card item-fluid" data-aos="fade-up" data-aos-delay="200" data-aos-easing="ease-in-out">
     <div class="card-body">
       <h5 class="card-title">{{ $lowongan->title_lowongan }}</h5>
       <small> 
@@ -73,7 +73,9 @@
       </small>
       <br> <hr>
       <p class="card-text">{{ $lowongan->excerpt }}</p>
+      @if (auth()->user())  
       <a href="/detail_lowongan/{{ $lowongan->slug }}" class="btn btn-primary">Lihat Lebih</a>
+      @endif
     </div>
   </div>
 </div>

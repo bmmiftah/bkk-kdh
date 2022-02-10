@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth as auth;
+use App\Models\User;
 use App\Models\lowongan;
 use App\Models\Perusahaan;
 use Illuminate\Http\Request;
+
 
 class LowonganController extends Controller
 {
@@ -56,9 +59,14 @@ class LowonganController extends Controller
      */
     public function show(lowongan $lowongan)
     {
+            
+        // $user = User::findOrFail(auth::id());
+
+        
         return view('detail_lowongan', [
             "title" => 'Detail Lowongan',
-            "detail_lowongan" => $lowongan 
+            "detail_lowongan" => $lowongan,
+            // "user"=>$user
         ]);
     }
 

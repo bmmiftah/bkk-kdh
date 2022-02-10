@@ -7,7 +7,7 @@
 
     <div class="row info align-items-md-stretch">
 
-        <div class="col-md-7 mb-2 rounded-5">
+        <div class="col-md-7 mb-2 rounded-5" data-aos="fade-down" data-aos-delay="200" data-aos-easing="ease-in-out">
           
             <div class="accordion" style="background-color: #fefefe" id="accordionPanelsStayOpenExample">
                 <div class="accordion-item">
@@ -50,16 +50,19 @@
             
         </div>
 
-        <div class="col-md-5">
+        <div class="col-md-5" data-aos="fade-down" data-aos-delay="400" data-aos-easing="ease-in-out">
 
             <div class="item-fluid p-5 shadow-sm border rounded-5" style="background-color: #fefefe">
                 <h2>{{ $detail_lowongan->title_lowongan }}</h2>
                 <p>{{ $detail_lowongan->perusahaan->nama_perusahaan }}</p>
                 <hr>
-                <h6>Status Pendaftaran <span class="badge bg-success">Dibuka</span></h6>
+                <h6>Status Pendaftaran <span class="badge {{ $detail_lowongan->status == (true) ? 'bg-success' : 'bg-danger' ; }} ">{{ $detail_lowongan->status == (true) ? 'Dibuka' : 'Ditutup' ; }}</span></h6>
                 <p class="inline-text"><i class="bi bi-calendar2-date-fill"></i> Batas Pendaftaran : {{ $detail_lowongan->tgl_tutup }}</p>
+
+                @if ($detail_lowongan->status == true)
                 <br>
                 <a href="/pendaftaran/create/{{ $detail_lowongan->slug }}" class="btn btn-primary" type="button"><i class="bi bi-briefcase-fill"></i> Daftar Lowongan</a>
+                @endif
               </div>
 
         </div>

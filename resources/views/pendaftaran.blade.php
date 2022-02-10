@@ -10,7 +10,7 @@
 
 <div class="d-flex justify-content-center py-5">
 
-    <div class="card shadow-sm" style="width: 70%;">
+    <div class="card shadow-sm" style="width: 80%;">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-plus-circle fa-sm fa-fw mr-2 text-gray-400"></i>Form Pendaftaran</h6>
         </div>

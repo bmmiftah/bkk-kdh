@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon">
             <img src="/img/logo-header.png" alt="">
         </div>
-        <div class="sidebar-brand-text mx-2">My Profile</div>
+        <div class="sidebar-brand-text mx-2">Profil Saya</div>
     </a>
 
     <!-- Divider -->
@@ -16,14 +16,14 @@
     <li class="nav-item">
         <a class="nav-link" href="/profil/{{ $user->id }}/edit">
         <i class="fas fa-fw fa-user"></i>
-        <span>Profil</span></a>
+        <span>Data Diri</span></a>
     </li>
 
     <!-- Vaksin-->
     <li class="nav-item">
         <a class="nav-link" href="/vaksin/{{ $user->id }}/edit">
         <i class="fas fa-fw fa-paperclip"></i>
-        <span>Data Vaksin</span></a>
+        <span>Data Vaksinasi</span></a>
     </li>
     <!-- Pendaftaran-->
     <li class="nav-item">

@@ -125,7 +125,7 @@
                   @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Update Profil</button>
+                <button type="submit" class="btn btn-primary">Update Data Diri</button>
               </form>
         </div>
     </div>

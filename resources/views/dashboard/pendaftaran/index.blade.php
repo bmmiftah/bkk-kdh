@@ -36,21 +36,22 @@
                         <td>{{ $pendaftaran->status }}</td>
                         <td class="text-right">
 
-                            @if ($pendaftaran->status != 'diterima')
-                            <form action="/dashboard/pendaftaran/{{ $pendaftaran->id }}" method="post" class="d-inline">
-                                @method('put')
-                                @csrf
-                                    <button class="badge bg-success text-light border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-check-circle fa-md fa-fw"></i> Update Status</button>
+                            @if ($pendaftaran->status !== 'Diterima' && $pendaftaran->status !== 'Ditolak, Gagal Verifikasi Data' && $pendaftaran->status !== 'Ditolak, Gagal Tahap Psikotes' && $pendaftaran->status !== 'Ditolak, Gagal Tahap Wawancara' && $pendaftaran->status !== 'Ditolak, Gagal Tahap MCU')
+                                <form action="/dashboard/pendaftaran/{{ $pendaftaran->id }}" method="post" class="d-inline">
+                                    @method('put')
+                                    @csrf
+                                        <button class="badge bg-success text-light border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-check-circle fa-md fa-fw"></i> Update Status</button>
+                                </form>
+
+                                <form action="/pp/{{ $pendaftaran->id }}" method="post" class="d-inline">
+                                    @method('put')
+                                    @csrf
+                                    {{-- <button class="badge bg-danger border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i></button> --}}
+                                        <button class="badge bg-danger text-light border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-check-circle fa-md fa-fw"></i> Tolak Pendaftaran</button>
                                 </form>
                             @endif
 
                             <a href="/dashboard/pendaftaran/{{ $pendaftaran->id }}" class="badge bg-info"><i style="color: white" class="fas fa-eye fa-md fa-fw"></i></a>
-
-                            <form action="/dashboard/pendaftaran/{{ $pendaftaran->id }}" method="post" class="d-inline">
-                            @method('delete')
-                            @csrf
-                                <button class="badge bg-danger border-0" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i></button>
-                            </form>
                         </td>
                     </tr>
                     @endforeach

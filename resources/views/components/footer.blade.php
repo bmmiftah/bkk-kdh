@@ -29,7 +29,7 @@
                 <h2 class="footer-text-title">Tentang</h2>
                 <nav class="list-unstyled">
                     <li class="list-space">
-                        <a href="https://sekolah.data.kemdikbud.go.id/index.php/chome/profil/536c70b2-c04a-429b-9be8-2e59b52cffa7" class="list-menu">SMK Muhammadiyah <br> Kandanghaur</a>
+                        <a href="https://smkmuhkandanghaur.sch.id/" class="list-menu">SMK Muhammadiyah <br> Kandanghaur</a>
                     </li>
                     <li class="list-space">
                         <a href="https://bkk.ditpsmk.net/about" class="list-menu">Bursa Kerja Khusus</a>
@@ -136,7 +136,7 @@
             <nav class="mx-auto d-flex flex-wrap align-items-center justify-content-center gap-4">
             </nav>
             <nav class="d-flex flex-lg-row flex-column align-items-center justify-content-center">
-                <p style="margin: 0">Copyright © 2021 Bagus Miftah Nur Haqqi</p>
+                <p style="margin: 0">Copyright © 2021-<?=date('Y')?> Bagus Miftah Nur Haqqi</p>
             </nav>
         </div>
     </div>

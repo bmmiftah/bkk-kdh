@@ -29,8 +29,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         
-        Gate::define('superAdmin', function(User $user) {
-            return $user->role_id === 3;
+        Gate::define('admin', function(User $user) {
+            return $user->role_id === 2;
         });
 
         // Gate::define('admin', function(User $user) {

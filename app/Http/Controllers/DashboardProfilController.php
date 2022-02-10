@@ -28,7 +28,7 @@ class DashboardProfilController extends Controller
         return view('DashboardProfil.personal.edit', [
             'user' => $profil,
             'jenis_kelamins' => $jenis_kelamin,
-            'title' => "Edit Profil"
+            'title' => "Edit Data Diri"
         ]);
     }
 

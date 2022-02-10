@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         // user
 
         User::create([
-            'role_id' => 3,
+            'role_id' => 2,
             'name' => 'Bagus Miftah Nur Haqqi',
             'username' => 'bmiftah',
             'email' => 'bagus.miftah@outlook.com',
@@ -72,11 +72,6 @@ class DatabaseSeeder extends Seeder
         Role::create([
             'title_role' => 'Admin',
             'slug' => 'admin'
-        ]);
-
-        Role::create([
-            'title_role' => 'Super Admin',
-            'slug' => 'super-admin'
         ]);
 
          // vaksin Seeders
@@ -182,7 +177,7 @@ class DatabaseSeeder extends Seeder
             'informasi_tambahan' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati vero corrupti vitae magni. Voluptatem a repellat quisquam tempora nostrum dicta quod neque sequi maxime in corrupti reprehenderit impedit exercitationem, ab nobis amet eius, facilis qui tenetur nulla quis molestias ipsam! Voluptatem, nobis impedit odit sequi, expedita quisquam debitis tempore incidunt voluptas non libero sunt eius hic rem officia, architecto amet culpa fugit voluptate? Blanditiis quae nulla consectetur doloremque est soluta accusamus earum maiores, commodi fuga nostrum iusto similique eius consequuntur dignissimos quos in inventore, iste dolorem! In doloribus excepturi tenetur. Error, beatae! Quasi est exercitationem tempore possimus, fuga eligendi consequatur ipsa praesentium sequi iste sunt nulla odio hic dolorum voluptas! Nobis eveniet iusto hic veniam magni eaque exercitationem, illum dolores illo, optio incidunt suscipit maiores aspernatur ratione modi fugiat, libero ullam dignissimos mollitia qui obcaecati maxime! Aperiam veniam laboriosam officia quam illo provident enim eaque iusto consequatur impedit ad accusamus animi sit nisi quibusdam quasi quia delectus hic iure, ipsum, quos tenetur! Fuga tempore fugiat iusto repellendus blanditiis voluptatem laborum. Perferendis vel unde nemo deserunt facilis cupiditate ex ipsam! Distinctio, assumenda illum. Voluptates enim nostrum minus beatae in aliquam ullam, aliquid reprehenderit doloribus dolores illo sequi consequatur possimus? Distinctio, ab!',
             'tgl_buka' => '2020-12-23',
             'tgl_tutup' => '2022-01-23',
-            'status' => 1
+           
         ]);
 
         Lowongan::create([
@@ -194,7 +189,7 @@ class DatabaseSeeder extends Seeder
             'informasi_tambahan' => 'Error, beatae! Quasi est exercitationem tempore possimus, fuga eligendi consequatur ipsa praesentium sequi iste sunt nulla odio hic dolorum voluptas! Nobis eveniet iusto hic veniam magni eaque exercitationem, illum dolores illo, optio incidunt suscipit maiores aspernatur ratione modi fugiat, libero ullam dignissimos mollitia qui obcaecati maxime! Aperiam veniam laboriosam officia quam illo provident enim eaque iusto consequatur impedit ad accusamus animi sit nisi quibusdam quasi quia delectus hic iure, ipsum, quos tenetur! Fuga tempore fugiat iusto repellendus blanditiis voluptatem laborum. Perferendis vel unde nemo deserunt facilis cupiditate ex ipsam! Distinctio, assumenda illum. Voluptates enim nostrum minus beatae in aliquam ullam, aliquid reprehenderit doloribus dolores illo sequi consequatur possimus? Distinctio, ab!',
             'tgl_buka' => '2020-10-12',
             'tgl_tutup' => '2021-11-12',
-            'status' => 1
+          
         ]);
 
         Lowongan::create([
@@ -206,7 +201,7 @@ class DatabaseSeeder extends Seeder
             'informasi_tambahan' => 'Error, beatae! Quasi est exercitationem tempore possimus, fuga eligendi consequatur ipsa praesentium sequi iste sunt nulla odio hic dolorum voluptas! Nobis eveniet iusto hic veniam magni eaque exercitationem, illum dolores illo, optio incidunt suscipit maiores aspernatur ratione modi fugiat, libero ullam dignissimos mollitia qui obcaecati maxime! Aperiam veniam laboriosam officia quam illo provident enim eaque iusto consequatur impedit ad accusamus animi sit nisi quibusdam quasi quia delectus hic iure, ipsum, quos tenetur! Fuga tempore fugiat iusto repellendus blanditiis voluptatem laborum. Perferendis vel unde nemo deserunt facilis cupiditate ex ipsam! Distinctio, assumenda illum. Voluptates enim nostrum minus beatae in aliquam ullam, aliquid reprehenderit doloribus dolores illo sequi consequatur possimus? Distinctio, ab!',
             'tgl_buka' => '2021-12-12',
             'tgl_tutup' => '2022-03-02',
-            'status' => 1
+          
         ]);
 
        //Informasi seeder
