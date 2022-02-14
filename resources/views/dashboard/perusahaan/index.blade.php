@@ -36,7 +36,6 @@
                             <form action="/dashboard/perusahaan/{{ $perusahaan->slug }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
-                            <button class="badge bg-danger border-0 text-light" onclick="return confirm('are you sure?')"><i style="color: white" class="fas fa-trash fa-md fa-fw"></i>Hapus</button>
                             </form>
                         </td>
                     </tr>

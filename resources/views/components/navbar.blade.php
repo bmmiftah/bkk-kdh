@@ -31,7 +31,7 @@ style="font-family: Poppins, sans-serif">
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li><a class="dropdown-item" href="/profil"> <i class="bi bi-person-badge"></i> My Profil</a></li>
           <li><hr class="dropdown-divider"></li>
-        @can('Admin')
+        @can('admin')
         <li><a class="dropdown-item" href="/dd"> <i class="bi bi-speedometer2"></i> Dashboard</a></li>
         <li><hr class="dropdown-divider"></li>
         @endcan

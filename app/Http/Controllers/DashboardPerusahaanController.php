@@ -119,9 +119,7 @@ class DashboardPerusahaanController extends Controller
      */
     public function destroy(Perusahaan $perusahaan)
     {
-        Perusahaan::destroy($perusahaan->id);
         
-        return redirect('/dashboard/perusahaan')->with('success', 'Perusahaan telah dihapus!');
     }
 
     public function checkSlug(Request $request)             
